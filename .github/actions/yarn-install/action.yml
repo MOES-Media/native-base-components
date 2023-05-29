@@ -17,9 +17,11 @@ runs:
         registry-url: https://npm.pkg.github.com
         scope: moes-media
     - name: ⚙️ Enable Corepack
+      shell: bash
       run: corepack enable
     - name: ⚙️ Expose yarn config as "$GITHUB_OUTPUT"
       id: yarn-config
+      shell: bash
       env:
         YARN_ENABLE_GLOBAL_CACHE: 'false'
       run: |
@@ -28,8 +30,10 @@ runs:
         echo "CURRENT_BRANCH=$(echo ${GITHUB_REF#refs/heads/} | sed -r 's,/,-,g')" >> $GITHUB_OUTPUT
     
     - name: 🔒 Set npm-auth-token
+      shell: bash
       run: |
         yarn config set npmScopes[moes-media].npmAuthToken ${{ secrets.RELEASE_TOKEN }}
+    
     - name: ♻️ Restore yarn cache
       uses: actions/cache@v3
       id: yarn-download-cache
@@ -45,16 +49,16 @@ runs:
           root-node-modules-native-base-components-folder
     
     - name: 📥 Install dependencies
-        shell: bash
-        working-directory: ${{ inputs.cwd }}
-        run: yarn install --immutable --inline-builds
-        env:
-          YARN_ENABLE_GLOBAL_CACHE: 'false' 
-          YARN_NM_MODE: 'hardlinks-local' 
-          YARN_INSTALL_STATE_PATH: '.yarn/ci-cache/install-state.gz' 
-          HUSKY: '0' 
+      shell: bash
+      run: yarn install --immutable --inline-builds
+      env:
+        YARN_ENABLE_GLOBAL_CACHE: 'false' 
+        YARN_NM_MODE: 'hardlinks-local' 
+        YARN_INSTALL_STATE_PATH: '.yarn/ci-cache/install-state.gz' 
+        HUSKY: '0' 
     
     - name: 🔒 Unset npm-auth-token
+      shell: bash
       run: |
         yarn config unset npmScopes[moes-media].npmAuthToken
     
