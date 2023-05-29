@@ -17,7 +17,9 @@
     "lint": "turbo run --concurrency=4 lint",
     "release": "yarn build && yarn semantic-release",
     "test": "turbo run --concurrency=4 test",
-    "test:ci": "turbo run --concurrency=2 test -- --maxWorkers=2 --forceExit"
+    "test:ci": "turbo run --concurrency=2 test -- --maxWorkers=2 --forceExit",
+    "dev:workshop:web": "yarn workspace @moes-media/native-base-components-workshop storybook:web",
+    "dev:workshop:mobile": "yarn workspace @moes-media/native-base-components-workshop storybook"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.3",
