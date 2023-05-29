@@ -1,0 +1,60 @@
+name: Yarn Install With Cache Enabled
+description: Sets up caching for yarn and runs yarn install
+inputs:
+  GITHUB_TOKEN:
+    description: Github token, needed for enabling private repo's
+    required: true
+
+runs:
+  using: composite
+
+  steps:
+    - name: ⚙️ Setup Node
+      uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: yarn
+          registry-url: https://npm.pkg.github.com
+          scope: moes-media
+    - name: ⚙️ Enable Corepack
+      run: corepack enable
+    - name: ⚙️ Expose yarn config as "$GITHUB_OUTPUT"
+      id: yarn-config
+      env:
+        YARN_ENABLE_GLOBAL_CACHE: 'false'
+      run: |
+        echo "CACHE_FOLDER=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+        echo "CURRENT_NODE_VERSION="node-$(node --version)"" >> $GITHUB_OUTPUT
+        echo "CURRENT_BRANCH=$(echo ${GITHUB_REF#refs/heads/} | sed -r 's,/,-,g')" >> $GITHUB_OUTPUT
+    
+    - name: 🔒 Set npm-auth-token
+      run: |
+        yarn config set npmScopes[moes-media].npmAuthToken ${{ secrets.RELEASE_TOKEN }}
+    - name: ♻️ Restore yarn cache
+      uses: actions/cache@v3
+      id: yarn-download-cache
+      with:
+        path: |
+          node_modules
+          apps/*/node_modules
+          scripts/*/node_modules
+          packages/*/node_modules
+          .yarn/cache
+        key: root-node-modules-native-base-components-folder-v1
+        restore-keys: |
+          root-node-modules-native-base-components-folder
+    
+    - name: 📥 Install dependencies
+        shell: bash
+        working-directory: ${{ inputs.cwd }}
+        run: yarn install --immutable --inline-builds
+        env:
+          YARN_ENABLE_GLOBAL_CACHE: 'false' 
+          YARN_NM_MODE: 'hardlinks-local' 
+          YARN_INSTALL_STATE_PATH: '.yarn/ci-cache/install-state.gz' 
+          HUSKY: '0' 
+    
+    - name: 🔒 Unset npm-auth-token
+      run: |
+        yarn config unset npmScopes[moes-media].npmAuthToken
+    

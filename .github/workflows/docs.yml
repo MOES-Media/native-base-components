@@ -1,0 +1,12 @@
+name: Release native-base-components
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Documentation:
+    runs:
+      on:
+        ubuntu-latest
+  steps:
+    

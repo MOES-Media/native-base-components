@@ -12,39 +12,9 @@ jobs:
       - uses: actions/checkout@v3
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: yarn
-          registry-url: https://npm.pkg.github.com
-          scope: moes-media
-      - name: Set npm-auth-token
-        run: |
-          yarn config set npmScopes[moes-media].npmAuthToken ${{ secrets.RELEASE_TOKEN }}
-      - name: Set yarn cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            node_modules
-            apps/*/node_modules
-            scripts/*/node_modules
-            packages/*/node_modules
-            .yarn/cache
-          key: root-node-modules-native-base-components-folder-v1
-          restore-keys: |
-            root-node-modules-native-base-components-folder
-      - name: 📥 Install dependencies
-        shell: bash
-        working-directory: ${{ inputs.cwd }}
-        run: yarn install --immutable --inline-builds
-        env:
-          YARN_ENABLE_GLOBAL_CACHE: 'false' 
-          YARN_NM_MODE: 'hardlinks-local' 
-          YARN_INSTALL_STATE_PATH: '.yarn/ci-cache/install-state.gz' 
-          HUSKY: '0' 
-      - name: Unset npm-auth-token
-        run: |
-          yarn config unset npmScopes[moes-media].npmAuthToken
+
+      - uses: ./.github/actions/yarn-install
+
       - name: Release native-base-components
         run: yarn release
         env:

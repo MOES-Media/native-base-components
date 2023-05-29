@@ -3932,6 +3932,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@moes-media/native-base-components-docs@workspace:apps/docs":
+  version: 0.0.0-use.local
+  resolution: "@moes-media/native-base-components-docs@workspace:apps/docs"
+  dependencies:
+    "@docusaurus/core": 2.4.1
+    "@docusaurus/module-type-aliases": 2.4.1
+    "@docusaurus/preset-classic": 2.4.1
+    "@mdx-js/react": ^1.6.22
+    "@tsconfig/docusaurus": ^1.0.5
+    clsx: ^1.2.1
+    prism-react-renderer: ^1.3.5
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    typescript: ^4.7.4
+  languageName: unknown
+  linkType: soft
+
 "@moes-media/native-base-components-workshop@workspace:apps/workshop":
   version: 0.0.0-use.local
   resolution: "@moes-media/native-base-components-workshop@workspace:apps/workshop"
@@ -12538,23 +12555,6 @@ __metadata:
   checksum: 1b643814e5947a87620f8a906287079347492282964ce1c236d52c414e3e3941126b96581376b180ba6e66899e70b86b587bc1aa23e3acd9957765be952d83fc
   languageName: node
   linkType: hard
-
-"docs@workspace:apps/docs":
-  version: 0.0.0-use.local
-  resolution: "docs@workspace:apps/docs"
-  dependencies:
-    "@docusaurus/core": 2.4.1
-    "@docusaurus/module-type-aliases": 2.4.1
-    "@docusaurus/preset-classic": 2.4.1
-    "@mdx-js/react": ^1.6.22
-    "@tsconfig/docusaurus": ^1.0.5
-    clsx: ^1.2.1
-    prism-react-renderer: ^1.3.5
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    typescript: ^4.7.4
-  languageName: unknown
-  linkType: soft
 
 "doctrine@npm:^3.0.0":
   version: 3.0.0
