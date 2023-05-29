@@ -20,6 +20,8 @@ jobs:
       
       - name: 📖 Documentation
         uses: ./.github/actions/docs
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release native-base-components
         run: yarn release
