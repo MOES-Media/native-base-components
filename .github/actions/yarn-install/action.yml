@@ -32,7 +32,7 @@ runs:
     - name: 🔒 Set npm-auth-token
       shell: bash
       run: |
-        yarn config set npmScopes[moes-media].npmAuthToken ${{ secrets.RELEASE_TOKEN }}
+        yarn config set npmScopes[moes-media].npmAuthToken ${{ inputs.GITHUB_TOKEN }}
     
     - name: ♻️ Restore yarn cache
       uses: actions/cache@v3
