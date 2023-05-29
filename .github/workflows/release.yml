@@ -17,6 +17,9 @@ jobs:
         uses: ./.github/actions/yarn-install
         with:
           GITHUB_TOKEN: foobar
+      
+      - name: 📖 Documentation
+        uses: ./.github/actions/docs
 
       - name: Release native-base-components
         run: yarn release

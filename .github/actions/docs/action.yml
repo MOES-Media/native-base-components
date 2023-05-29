@@ -1,0 +1,14 @@
+name: Documentation
+description: Builds Docusaurus site and publishes it to Github Pages
+
+runs:
+  using: composite
+
+  steps:
+    - name: 🔨 Build native-base-components:docs
+      runs: yarn build:apps:docs
+      
+    - name: 🚀 Deploy docs
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: ./apps/docs/build
