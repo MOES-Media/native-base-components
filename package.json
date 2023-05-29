@@ -1,0 +1,60 @@
+{
+  "name": "@moes-media/mono-repo-template",
+  "packageManager": "yarn@3.5.1",
+  "workspaces": [
+    "packages/**/*",
+    "apps/**/*"
+  ],
+  "scripts": {
+    "postinstall": "husky install",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "build": "turbo run --concurrency=4 build",
+    "clean": "turbo run clean",
+    "coverage": "turbo run --concurrency=4 coverage",
+    "coverage:ci": "turbo run --concurrency=2 coverage -- --maxWorkers=2 --forceExit",
+    "format": "turbo run --concurrency=4 format",
+    "lint": "turbo run --concurrency=4 lint",
+    "release": "yarn build && yarn semantic-release",
+    "test": "turbo run --concurrency=4 test",
+    "test:ci": "turbo run --concurrency=2 test -- --maxWorkers=2 --forceExit"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
+    "@commitlint/config-lerna-scopes": "^17.6.3",
+    "@manypkg/cli": "^0.20.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^8.1.0",
+    "@semantic-release/npm": "^10.0.3",
+    "husky": "^8.0.0",
+    "native-base": "^3.4.28",
+    "pinst": "^3.0.0",
+    "semantic-release": "^21.0.2",
+    "turbo": "^1.9.9",
+    "typescript": "^5.0.4"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/github",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ]
+    ]
+  }
+}
