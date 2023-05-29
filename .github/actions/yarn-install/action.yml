@@ -44,6 +44,7 @@ runs:
           scripts/*/node_modules
           packages/*/node_modules
           .yarn/cache
+          .yarn/ci-cache
         key: root-node-modules-native-base-components-folder-v1
         restore-keys: |
           root-node-modules-native-base-components-folder
