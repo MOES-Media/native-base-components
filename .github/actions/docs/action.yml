@@ -6,7 +6,8 @@ runs:
 
   steps:
     - name: 🔨 Build native-base-components:docs
-      runs: yarn build:apps:docs
+      shell: bash
+      run: yarn build:apps:docs
       
     - name: 🚀 Deploy docs
       uses: JamesIves/github-pages-deploy-action@v4
