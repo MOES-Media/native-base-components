@@ -19,7 +19,8 @@
     "test": "turbo run --concurrency=4 test",
     "test:ci": "turbo run --concurrency=2 test -- --maxWorkers=2 --forceExit",
     "dev:workshop:web": "yarn workspace @moes-media/native-base-components-workshop storybook:web",
-    "dev:workshop:mobile": "yarn workspace @moes-media/native-base-components-workshop storybook"
+    "dev:workshop:mobile": "yarn workspace @moes-media/native-base-components-workshop storybook",
+    "dev:docs": "yarn workspace @moes-media/native-base-components-docs start"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.3",

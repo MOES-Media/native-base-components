@@ -1,4 +1,4 @@
-name: Release <PROJECT_NAME>
+name: Release native-base-components
 on:
   push:
     branches:
@@ -30,9 +30,9 @@ jobs:
             scripts/*/node_modules
             packages/*/node_modules
             .yarn/cache
-          key: root-node-modules-<PROJECT_NAME>-folder-v1
+          key: root-node-modules-native-base-components-folder-v1
           restore-keys: |
-            root-node-modules-<PROJECT_NAME>-folder
+            root-node-modules-native-base-components-folder
       - name: 📥 Install dependencies
         shell: bash
         working-directory: ${{ inputs.cwd }}
@@ -45,11 +45,11 @@ jobs:
       - name: Unset npm-auth-token
         run: |
           yarn config unset npmScopes[moes-media].npmAuthToken
-      - name: Release <PROJECT_NAME>
+      - name: Release native-base-components
         run: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
-      - name: Publish <PROJECT_NAME>
+      - name: Publish native-base-components
         run: npm publish
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
