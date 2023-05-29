@@ -1,5 +1,5 @@
 {
-  "name": "@moes-media/mono-repo-template",
+  "name": "@moes-media/native-base-components",
   "packageManager": "yarn@3.5.1",
   "workspaces": [
     "packages/**/*",

@@ -3911,27 +3911,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@moes-media/mono-repo-template@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@moes-media/mono-repo-template@workspace:."
-  dependencies:
-    "@commitlint/cli": ^17.6.3
-    "@commitlint/config-conventional": ^17.6.3
-    "@commitlint/config-lerna-scopes": ^17.6.3
-    "@manypkg/cli": ^0.20.0
-    "@semantic-release/changelog": ^6.0.3
-    "@semantic-release/git": ^10.0.1
-    "@semantic-release/github": ^8.1.0
-    "@semantic-release/npm": ^10.0.3
-    husky: ^8.0.0
-    native-base: ^3.4.28
-    pinst: ^3.0.0
-    semantic-release: ^21.0.2
-    turbo: ^1.9.9
-    typescript: ^5.0.4
-  languageName: unknown
-  linkType: soft
-
 "@moes-media/native-base-components-docs@workspace:apps/docs":
   version: 0.0.0-use.local
   resolution: "@moes-media/native-base-components-docs@workspace:apps/docs"
@@ -3984,6 +3963,27 @@ __metadata:
     react-native: 0.71.8
     react-native-safe-area-context: 4.5.0
     react-native-web: ^0.18.10
+    typescript: ^5.0.4
+  languageName: unknown
+  linkType: soft
+
+"@moes-media/native-base-components@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@moes-media/native-base-components@workspace:."
+  dependencies:
+    "@commitlint/cli": ^17.6.3
+    "@commitlint/config-conventional": ^17.6.3
+    "@commitlint/config-lerna-scopes": ^17.6.3
+    "@manypkg/cli": ^0.20.0
+    "@semantic-release/changelog": ^6.0.3
+    "@semantic-release/git": ^10.0.1
+    "@semantic-release/github": ^8.1.0
+    "@semantic-release/npm": ^10.0.3
+    husky: ^8.0.0
+    native-base: ^3.4.28
+    pinst: ^3.0.0
+    semantic-release: ^21.0.2
+    turbo: ^1.9.9
     typescript: ^5.0.4
   languageName: unknown
   linkType: soft
