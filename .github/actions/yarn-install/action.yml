@@ -11,11 +11,11 @@ runs:
   steps:
     - name: ⚙️ Setup Node
       uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: yarn
-          registry-url: https://npm.pkg.github.com
-          scope: moes-media
+      with:
+        node-version: 18
+        cache: yarn
+        registry-url: https://npm.pkg.github.com
+        scope: moes-media
     - name: ⚙️ Enable Corepack
       run: corepack enable
     - name: ⚙️ Expose yarn config as "$GITHUB_OUTPUT"
