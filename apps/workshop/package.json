@@ -16,8 +16,8 @@
     "storybook": "sb-rn-get-stories --config-path .ondevice && STORYBOOK_ENABLED='true' expo start --tunnel",
     "storybook:ios": "sb-rn-get-stories --config-path .ondevice && STORYBOOK_ENABLED='true' expo start --ios",
     "storybook:android": "sb-rn-get-stories --config-path .ondevice && STORYBOOK_ENABLED='true' expo start --android",
-    "lint": "yarn eslint .",
-    "prettier:format": "yarn prettier --write '**/*.{js,ts,tsx,jsx}'"
+    "lint": "eslint .",
+    "prettier:format": "prettier --write '**/*.{js,ts,tsx,jsx}'"
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",

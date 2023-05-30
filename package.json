@@ -16,7 +16,7 @@
     "coverage": "turbo run --concurrency=4 coverage",
     "coverage:ci": "turbo run --concurrency=2 coverage -- --maxWorkers=2 --forceExit",
     "format": "turbo run --concurrency=4 format",
-    "prettier:format": "turbo run --concurrency=4 format",
+    "prettier:format": "turbo run --concurrency=4 prettier:format",
     "lint": "turbo run --concurrency=4 lint",
     "release": "yarn build && yarn semantic-release",
     "test": "turbo run --concurrency=4 test",
