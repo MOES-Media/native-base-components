@@ -1,5 +1,15 @@
-import { StyleSheet, Text, View } from "react-native";
-import Constants from "expo-constants";
+import { StyleSheet, Text, View } from 'react-native';
+import Constants from 'expo-constants';
+import OnDevice from './.ondevice';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 function App() {
   return (
@@ -9,19 +19,6 @@ function App() {
   );
 }
 
-let AppEntryPoint = App;
-
-if (Constants.expoConfig?.extra?.storybookEnabled === "true") {
-  AppEntryPoint = require("./.ondevice").default;
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const AppEntryPoint = Constants.expoConfig?.extra?.storybookEnabled === 'true' ? OnDevice : App;
 
 export default AppEntryPoint;

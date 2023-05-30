@@ -1,32 +1,32 @@
 export default ({ config }) => ({
   ...config,
-  name: "workshop",
-  slug: "expo-template-blank-typescript",
-  version: "1.0.0",
-  orientation: "portrait",
-  icon: "./assets/icon.png",
+  name: 'workshop',
+  slug: 'expo-template-blank-typescript',
+  version: '1.0.0',
+  orientation: 'portrait',
+  icon: './assets/icon.png',
   extra: {
     storybookEnabled: process.env.STORYBOOK_ENABLED,
   },
   splash: {
-    image: "./assets/splash.png",
-    resizeMode: "contain",
-    backgroundColor: "#ffffff",
+    image: './assets/splash.png',
+    resizeMode: 'contain',
+    backgroundColor: '#ffffff',
   },
   updates: {
     fallbackToCacheTimeout: 0,
   },
-  assetBundlePatterns: ["**/*"],
+  assetBundlePatterns: ['**/*'],
   ios: {
     supportsTablet: true,
   },
   android: {
     adaptiveIcon: {
-      foregroundImage: "./assets/adaptive-icon.png",
-      backgroundColor: "#FFFFFF",
+      foregroundImage: './assets/adaptive-icon.png',
+      backgroundColor: '#FFFFFF',
     },
   },
   web: {
-    favicon: "./assets/favicon.png",
+    favicon: './assets/favicon.png',
   },
 });

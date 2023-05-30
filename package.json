@@ -3,7 +3,8 @@
   "packageManager": "yarn@3.5.1",
   "workspaces": [
     "packages/**/*",
-    "apps/**/*"
+    "apps/**/*",
+    "config/**/*"
   ],
   "scripts": {
     "postinstall": "husky install",
@@ -15,13 +16,15 @@
     "coverage": "turbo run --concurrency=4 coverage",
     "coverage:ci": "turbo run --concurrency=2 coverage -- --maxWorkers=2 --forceExit",
     "format": "turbo run --concurrency=4 format",
+    "prettier:format": "turbo run --concurrency=4 format",
     "lint": "turbo run --concurrency=4 lint",
     "release": "yarn build && yarn semantic-release",
     "test": "turbo run --concurrency=4 test",
     "test:ci": "turbo run --concurrency=2 test -- --maxWorkers=2 --forceExit",
     "dev:workshop:web": "yarn workspace @moes-media/native-base-components-workshop storybook:web",
     "dev:workshop:mobile": "yarn workspace @moes-media/native-base-components-workshop storybook",
-    "dev:docs": "yarn workspace @moes-media/native-base-components-docs start"
+    "dev:docs": "yarn workspace @moes-media/native-base-components-docs start",
+    "precommit": "manypkg fix && yarn prettier:format && yarn lint"
   },
   "dependencies": {
     "@commitlint/cli": "^17.6.3",
@@ -32,12 +35,12 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^8.1.0",
     "@semantic-release/npm": "^10.0.3",
+    "@types/eslint": "^8",
     "husky": "^8.0.0",
     "native-base": "^3.4.28",
     "pinst": "^3.0.0",
     "semantic-release": "^21.0.2",
-    "turbo": "^1.9.9",
-    "typescript": "^5.0.4"
+    "turbo": "^1.9.9"
   },
   "release": {
     "branches": [
