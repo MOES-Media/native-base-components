@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_moes_media_native_base_components_docs=self.webpackChunk_moes_media_native_base_components_docs||[]).push([[4693],{2673:e=>{e.exports=JSON.parse('{"label":"hola","permalink":"/native-base-components/blog/tags/hola","allTagsPath":"/native-base-components/blog/tags","count":1}')}}]);
