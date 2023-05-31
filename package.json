@@ -18,7 +18,7 @@
     "format": "turbo run --concurrency=4 format",
     "prettier:format": "turbo run --concurrency=4 prettier:format",
     "lint": "turbo run --concurrency=4 lint",
-    "release": "yarn build && yarn semantic-release",
+    "release": "yarn build && yarn semantic-release --dry-run",
     "test": "turbo run --concurrency=4 test",
     "test:ci": "turbo run --concurrency=2 test -- --maxWorkers=2 --forceExit",
     "dev:workshop:web": "yarn workspace @moes-media/native-base-components-workshop storybook:web",
@@ -44,7 +44,8 @@
   },
   "release": {
     "branches": [
-      "main"
+      "main",
+      "feat/config"
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
