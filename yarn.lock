@@ -4016,6 +4016,15 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@moes-media/native-base-components-image-slider@workspace:packages/native-base-image-slider":
+  version: 0.0.0-use.local
+  resolution: "@moes-media/native-base-components-image-slider@workspace:packages/native-base-image-slider"
+  dependencies:
+    "@moes-media/native-base-components-ts-config": "*"
+    typescript: ^4.9.4
+  languageName: unknown
+  linkType: soft
+
 "@moes-media/native-base-components-prettier@*, @moes-media/native-base-components-prettier@workspace:config/prettier-config":
   version: 0.0.0-use.local
   resolution: "@moes-media/native-base-components-prettier@workspace:config/prettier-config"
@@ -4023,6 +4032,12 @@ __metadata:
     prettier: ^2.8.8
   peerDependencies:
     prettier: ^2.8.8
+  languageName: unknown
+  linkType: soft
+
+"@moes-media/native-base-components-ts-config@*, @moes-media/native-base-components-ts-config@workspace:config/ts-config":
+  version: 0.0.0-use.local
+  resolution: "@moes-media/native-base-components-ts-config@workspace:config/ts-config"
   languageName: unknown
   linkType: soft
 
