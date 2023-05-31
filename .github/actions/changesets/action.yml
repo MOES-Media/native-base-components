@@ -1,0 +1,15 @@
+name: Changesets
+description: Action to configure changesets in the project
+inputs:
+  GITHUB_TOKEN:
+    required: true
+    description: The GH_TOKEN to create release PR's
+
+runs:
+  using: composite
+
+  steps:
+    - name: 💡 Create Release Pull Request
+      uses: changesets/action@v1
+      env:
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
