@@ -1,6 +1,14 @@
 import { withBackgrounds } from '@storybook/addon-ondevice-backgrounds';
+import { NativeBaseProvider } from 'native-base';
 
-export const decorators = [withBackgrounds];
+export const decorators = [
+  withBackgrounds,
+  (Story) => (
+    <NativeBaseProvider>
+      <Story />
+    </NativeBaseProvider>
+  ),
+];
 
 export const parameters = {
   backgrounds: {
