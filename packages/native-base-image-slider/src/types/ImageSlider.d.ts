@@ -1,4 +1,4 @@
-import {FC} from 'react'
+import { FC } from 'react';
 
 interface ImageProps {
   src: string;
@@ -17,4 +17,4 @@ interface ImageSliderProps {
 declare const ImageSlider = FC<ImageSliderProps>;
 
 export { ImageSliderProps };
-export default ImageSlider
+export default ImageSlider;

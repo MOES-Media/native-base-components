@@ -5,12 +5,7 @@ import { SliderContentItemProps } from '../types/SliderContentItem';
 
 const SliderContentItem: FC<SliderContentItemProps> = ({ imageSource, width }) => (
   <Touchable onPress={undefined}>
-    <Image
-      height={250}
-      width={width}
-      source={{ uri: imageSource }}
-      alt="image-slider-content"
-    />
+    <Image height={250} width={width} source={{ uri: imageSource }} alt="image-slider-content" />
   </Touchable>
 );
 
