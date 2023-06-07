@@ -21,11 +21,12 @@
     "release": "yarn build && yarn semantic-release --dry-run",
     "test": "turbo run --concurrency=4 test",
     "test:ci": "turbo run --concurrency=2 test -- --maxWorkers=2 --forceExit",
+    "test:components": "turbo run --concurrency=4 --filter='./packages/*' test",
     "dev:components": "yarn turbo run --concurrency=4 dev --filter='./packages/*'",
     "dev:workshop:web": "yarn workspace @moes-media/native-base-components-workshop storybook:web",
     "dev:workshop:mobile": "yarn workspace @moes-media/native-base-components-workshop storybook",
     "dev:docs": "yarn workspace @moes-media/native-base-components-docs start",
-    "precommit": "manypkg fix && yarn prettier:format && yarn lint"
+    "precommit": "manypkg fix && yarn prettier:format && yarn lint -- --fix"
   },
   "dependencies": {
     "@changesets/cli": "^2.26.1",
@@ -40,6 +41,7 @@
     "@types/eslint": "^8",
     "husky": "^8.0.0",
     "pinst": "^3.0.0",
+    "react-native-web": "^0.19.4",
     "semantic-release": "^21.0.2",
     "turbo": "^1.9.9",
     "typescript": "^4.9.4"

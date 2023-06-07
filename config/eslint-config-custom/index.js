@@ -44,10 +44,10 @@ module.exports = {
       'react/function-component-definition': 'off',
       'react/no-array-index-key': 'off'
     },
-    ignorePatterns: ['.eslintrc.js', '*.config.js', '*.stories.tsx', 'dist/**'],
+    ignorePatterns: ['.eslintrc.js', '*.config.js', '*.stories.tsx', 'dist/**', '*.spec.tsx'],
     overrides: [
       {
-        files: ['src/**/*.ts', 'src/**/*.tsx', 'src/**/*.d.ts'],
+        files: ['src/**/*.ts', 'src/**/*.tsx', 'types/**/*.d.ts'],
         rules: {
           // Add specific rules for the included files if needed
         }
