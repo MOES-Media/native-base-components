@@ -43,7 +43,7 @@
     "pinst": "^3.0.0",
     "react-native-web": "^0.19.4",
     "semantic-release": "^21.0.2",
-    "turbo": "^1.9.9",
+    "turbo": "latest",
     "typescript": "^4.9.4"
   },
   "release": {
