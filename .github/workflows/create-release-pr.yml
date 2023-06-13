@@ -37,4 +37,4 @@ jobs:
             source: feat/${{github.event.inputs.feature_branch}}
             target: release/${{github.event.inputs.feature_branch}}
           labels: release-candidate
-          base: release/${{github.event.inputs.feature_branch}}
+          base: main
