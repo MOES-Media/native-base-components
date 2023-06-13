@@ -13,6 +13,8 @@ jobs:
         with:
           ref: develop
       - name: Create branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
         run: | 
           git branch release/${{github.ref_name}} 
           git checkout release/${{github.ref_name}}
