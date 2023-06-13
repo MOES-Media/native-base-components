@@ -2,10 +2,6 @@ name: Create Release PR
 
 on:
   workflow_dispatch:
-    inputs:
-      feature_branch:
-        description: "Feature branch"
-        required: true
 
 jobs:
   create_pr:
