@@ -22,6 +22,9 @@ jobs:
             exit 1
           fi
 
+      - name: Checkout the feature branch
+        run: git checkout feat/${{github.event.inputs.feature_branch}}
+
       - name: 📝 Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
@@ -34,4 +37,3 @@ jobs:
             source: feat/${{github.event.inputs.feature_branch}}
             target: release/${{github.event.inputs.feature_branch}}
           labels: release-candidate
-          base: feat/${{github.event.inputs.feature_branch}}
