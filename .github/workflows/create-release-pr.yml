@@ -20,4 +20,4 @@ jobs:
             source: ${{github.ref_name}}
             target: release/${{github.ref_name}}
           labels: release-candidate
-          base: release/${{github.ref_name}}
+          branch: release/${{github.ref_name}}
