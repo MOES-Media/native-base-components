@@ -15,6 +15,9 @@ jobs:
           persist-credentials: true
       - name: Create branch
         run: | 
+          git config --global user.name 'Github Actions'
+          git config --global user.email 'no-reply@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git branch release/${{github.ref_name}} 
           git checkout release/${{github.ref_name}}
           git push -u origin release/${{github.ref_name}}
