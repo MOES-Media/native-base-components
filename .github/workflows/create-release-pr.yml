@@ -4,7 +4,21 @@ on:
   workflow_dispatch:
 
 jobs:
-  create_pr:
+  CreateReleaseBranch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout develop
+        uses: actions/checkout@v3
+        with:
+          ref: develop
+      - name: Create branch
+        run: | 
+          git branch release/${{github.ref_name}} 
+          git checkout release/${{github.ref_name}}
+          git push -u origin release/${{github.ref_name}}
+
+  CreateReleasePR:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,5 +34,5 @@ jobs:
             source: ${{github.ref_name}}
             target: release/${{github.ref_name}}
           labels: release-candidate
-          branch: refs/heads/release/${{github.ref_name}}
-          base: main
+          branch: release/${{github.ref_name}}
+          base: develop
