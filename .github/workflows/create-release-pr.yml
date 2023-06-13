@@ -21,3 +21,4 @@ jobs:
             target: release/${{github.ref_name}}
           labels: release-candidate
           branch: release/${{github.ref_name}}
+          base: main
