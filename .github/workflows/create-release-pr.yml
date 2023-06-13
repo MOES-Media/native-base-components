@@ -29,13 +29,18 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: 📝 Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.CI_TOKEN }}
-          title: Release feat/${{github.ref_name}}
-          body: |
-            Automated release PR.
-            source: ${{github.ref_name}}
-            target: release/${{github.ref_name}}
-          labels: release-candidate
-          branch: release/${{github.ref_name}}
+        run: |
+          # Set the base branch name
+          base_branch="release/${{github.ref_name}}"
+          
+          # Set the pull request title
+          pr_title="Release ${{github.ref_name}}"
+          
+          # Set the pull request body
+          pr_body="TAutomated Release PR from ${{ github.ref_name }}
+          source: ${{ github.ref_name }}
+          target: release/${{github.ref_name}}"
+          
+          # Create the pull request
+          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body"
+        
