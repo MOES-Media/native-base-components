@@ -1,3 +1,3 @@
-import ImageSlider from './ImageSlider/ImageSlider';
+import ImageSlider from './ImageSlider';
 
 export default ImageSlider;

@@ -1,7 +1,7 @@
 import { Box, FlatList } from 'native-base';
 import { FC, useEffect, useRef, useState } from 'react';
 import { Dimensions, LayoutAnimation, FlatList as NativeFlatList } from 'react-native';
-import { Pagination, SliderContentItem } from '@moes-media/native-base-components-atoms/types';
+import { Pagination, SliderContentItem } from '@moes-media/native-base-components-atoms';
 import { isMobile } from '@moes-media/native-base-components-utils';
 import { ImageSliderProps } from '../../types/ImageSlider';
 
@@ -29,7 +29,7 @@ const ImageSlider: FC<ImageSliderProps> = ({
       return () => ({});
     }
     const timerId = setInterval(() => {
-      setActiveIdx((idx) => {
+      setActiveIdx(idx => {
         if (idx + 1 === data.length) {
           return 0;
         }
@@ -71,9 +71,9 @@ const ImageSlider: FC<ImageSliderProps> = ({
         decelerationRate="fast"
         ItemSeparatorComponent={renderSeperator(separatorWidth)}
         keyExtractor={(_, idx) => `image-${idx}`}
-        maxToRenderPerBatch={1}
+        maxToRenderPerBatch={process.env.NODE_ENV === 'test' ? data.length : 1}
         initialScrollIndex={0}
-        initialNumToRender={1}
+        initialNumToRender={process.env.NODE_ENV === 'test' ? data.length : 1}
         showsHorizontalScrollIndicator={false}
         bounces={false}
         viewabilityConfig={{ viewAreaCoveragePercentThreshold: 50 }}

@@ -1,4 +1,3 @@
-// __mocks__/mockSafeAreaContext.js
 import * as React from 'react';
 
 export const SafeAreaProvider = ({ children }) => <React.Fragment>{children}</React.Fragment>;

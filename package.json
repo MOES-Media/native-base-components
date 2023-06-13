@@ -4,7 +4,8 @@
   "workspaces": [
     "packages/**/*",
     "apps/**/*",
-    "config/**/*"
+    "config/**/*",
+    "scripts/**/*"
   ],
   "scripts": {
     "postinstall": "husky install",
@@ -12,6 +13,7 @@
     "postpack": "pinst --enable",
     "build": "turbo run --concurrency=4 build",
     "build:apps:docs": "turbo run --concurrency=4 build --filter=@moes-media/native-base-components-docs",
+    "build:cli": "turbo run build --filter=@moes-media/native-base-components-scaffold",
     "clean": "turbo run clean",
     "coverage": "turbo run --concurrency=4 coverage",
     "coverage:ci": "turbo run --concurrency=2 coverage -- --maxWorkers=2 --forceExit",
@@ -26,7 +28,8 @@
     "dev:workshop:web": "yarn workspace @moes-media/native-base-components-workshop storybook:web",
     "dev:workshop:mobile": "yarn workspace @moes-media/native-base-components-workshop storybook",
     "dev:docs": "yarn workspace @moes-media/native-base-components-docs start",
-    "precommit": "manypkg fix && yarn prettier:format && yarn lint -- --fix"
+    "precommit": "manypkg fix && yarn prettier:format && yarn lint -- --fix",
+    "scaffold": "yarn workspace @moes-media/native-base-components-scaffold start"
   },
   "dependencies": {
     "@changesets/cli": "^2.26.1",
@@ -45,6 +48,9 @@
     "semantic-release": "^21.0.2",
     "turbo": "latest",
     "typescript": "^4.9.4"
+  },
+  "devDependencies": {
+    "@moes-media/native-base-components-scaffold": "*"
   },
   "release": {
     "branches": [
