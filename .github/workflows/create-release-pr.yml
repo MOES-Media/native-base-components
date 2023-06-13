@@ -29,8 +29,9 @@ jobs:
           branch: release/${{github.event.inputs.feature_branch}}
           commit-message: "chore(pre-release): Create PR from feat/${{ github.event.inputs.feature_branch }} to release/${{github.event.inputs.feature_branch}}"
           title: Release feat/${{github.event.inputs.feature_branch}}
-          body: | 
+          body: |
             Automated release PR.
             source: feat/${{github.event.inputs.feature_branch}}
             target: release/${{github.event.inputs.feature_branch}}
           labels: release-candidate
+          base: feat/${{github.event.inputs.feature_branch}}
