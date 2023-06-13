@@ -16,6 +16,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
         run: | 
+          git config --global user.name "cd"
+          git config --global user.email "cd@users.noreply.github.com"
           git branch release/${{github.ref_name}} 
           git checkout release/${{github.ref_name}}
           git push -u origin release/${{github.ref_name}}
