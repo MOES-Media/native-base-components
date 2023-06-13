@@ -88,9 +88,7 @@ describe('ImageSlider', () => {
   beforeAll(() => {
     console.error = jest.fn((...args) => {
       const errorMessage = args[0];
-      if (
-        !errorMessage.includes('Warning:') 
-      ) {
+      if (!errorMessage.includes('Warning:')) {
         originalConsoleError(...args);
       }
     });

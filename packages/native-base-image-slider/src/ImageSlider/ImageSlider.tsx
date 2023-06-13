@@ -29,7 +29,7 @@ const ImageSlider: FC<ImageSliderProps> = ({
       return () => ({});
     }
     const timerId = setInterval(() => {
-      setActiveIdx(idx => {
+      setActiveIdx((idx) => {
         if (idx + 1 === data.length) {
           return 0;
         }
