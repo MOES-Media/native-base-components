@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import * as prog from 'caporal'
-import createAction from './actions/create'
+import * as prog from "caporal";
+import createAction from "./actions/create";
 
 prog
   .version("1.0.0")
