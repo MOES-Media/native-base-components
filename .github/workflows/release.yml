@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - feat/image-slider
 
 jobs:
   Release:
@@ -33,6 +32,7 @@ jobs:
         run: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          
       - name: Publish native-base-components
         run: npm publish
         env:

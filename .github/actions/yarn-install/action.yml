@@ -45,9 +45,9 @@ runs:
           packages/*/node_modules
           .yarn/cache
           .yarn/ci-cache
-        key: root-node-modules-native-base-components-folder-v1
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
-          root-node-modules-native-base-components-folder
+          ${{ runner.os }}-yarn-
     
     - name: 📥 Install dependencies
       shell: bash
