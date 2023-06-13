@@ -1,6 +1,6 @@
 {
   "name": "@moes-media/native-base-components-image-slider",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
