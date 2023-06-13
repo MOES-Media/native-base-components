@@ -2,10 +2,6 @@ name: Create Release PR
 
 on:
   workflow_dispatch:
-    inputs:
-      feature_branch:
-        description: "Feature branch"
-        required: true
 
 jobs:
   create_pr:
@@ -14,23 +10,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: ✅ Check if branch exists
-        run: |
-          git fetch --all --quiet
-          if ! git rev-parse --verify "origin/feat/${{ github.event.inputs.feature_branch }}"; then
-            echo "Branch does not exist: feat/${{ github.event.inputs.feature_branch }}"
-            exit 1
-          fi
-
       - name: 📝 Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          branch: release/${{github.event.inputs.feature_branch}}
-          commit-message: "chore(pre-release): Create PR from feat/${{ github.event.inputs.feature_branch }} to release/${{github.event.inputs.feature_branch}}"
+          token: ${{ secrets.CI_TOKEN }}
           title: Release feat/${{github.event.inputs.feature_branch}}
-          body: | 
+          body: |
             Automated release PR.
-            source: feat/${{github.event.inputs.feature_branch}}
+            source: ${{github.ref_name}}
             target: release/${{github.event.inputs.feature_branch}}
           labels: release-candidate
+          branch: release/${{github.event.inputs.feature_branch}}
