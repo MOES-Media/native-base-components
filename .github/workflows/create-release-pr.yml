@@ -13,29 +13,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: feat/${{ github.event.inputs.feature_branch }}
-
-      - name: ✅ Check if branch exists
-        run: |
-          git fetch --all --quiet
-          if ! git rev-parse --verify "origin/feat/${{ github.event.inputs.feature_branch }}"; then
-            echo "Branch does not exist: feat/${{ github.event.inputs.feature_branch }}"
-            exit 1
-          fi
-
-      - name: Checkout the feature branch
-        run: git checkout feat/${{github.event.inputs.feature_branch}}
 
       - name: 📝 Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.CI_TOKEN }}
-          base: feat/${{github.event.inputs.feature_branch}}
           title: Release feat/${{github.event.inputs.feature_branch}}
           body: |
             Automated release PR.
-            source: feat/${{github.event.inputs.feature_branch}}
+            source: ${{github.ref_name}}
             target: release/${{github.event.inputs.feature_branch}}
           labels: release-candidate
           branch: release/${{github.event.inputs.feature_branch}}
