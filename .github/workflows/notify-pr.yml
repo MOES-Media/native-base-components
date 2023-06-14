@@ -2,18 +2,17 @@ name: Notify on Release PR
 
 on:
   pull_request:
-    types:
-      - opened
     branches:
-      - 'release/*'
+      - release/*
 
 jobs:
-  send_discord_message:
-    runs-on: ubuntu-latest
+  SendDiscordNotification:
+    runs-on: 
+      - ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-
+      - name: Foobar
+        run: echo "hello there general kenobi..."
       - name: 🔔 Send Discord Notification
         env:
           WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK }}

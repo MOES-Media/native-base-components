@@ -23,6 +23,7 @@ jobs:
           git push -u origin release/${{ github.ref_name }}
 
   CreateReleasePR:
+    needs: CreateReleaseBranch
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
@@ -34,17 +35,12 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # Set the base branch name
           base_branch="release/${{github.ref_name}}"
           
-          # Set the pull request title
           pr_title="Release ${{github.ref_name}}"
           
-          # Set the pull request body
-          pr_body="TAutomated Release PR from ${{ github.ref_name }}
+          pr_body="Automated Release PR from ${{ github.ref_name }}
           source: ${{ github.ref_name }}
           target: release/${{github.ref_name}}"
-          
-          # Create the pull request
-          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body"
-        
+
+          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body --delete-branch"
