@@ -80,6 +80,24 @@ const testCases = {
 describe('ImageSlider', () => {
   const originalConsoleError = console.error;
 
+  beforeAll(() => {
+    jest.mock('@moes-media/native-base-components-atoms', () => ({
+      Pagination: (props: any) => <div mock-pagination data-testid="mock-pagination" {...props} />,
+      SliderContentItem: (props: any) => (
+        <div mock-slider-content-item data-testid="mock-slider-content-item" {...props} />
+      ),
+    }));
+    
+    jest.mock('@moes-media/native-base-components-utils', () => {
+      const og = jest.requireActual('@moes-media/native-base-components-utils');
+      return {
+        og,
+        isMobile: jest.fn(),
+      };
+    });
+    
+  })
+
   afterAll(() => {
     jest.resetAllMocks();
     console.error = originalConsoleError;
