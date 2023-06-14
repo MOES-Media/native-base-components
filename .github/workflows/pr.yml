@@ -1,4 +1,4 @@
-name: Notify on Release PR
+name: Release PR Quality Check
 
 on:
   workflow_run:

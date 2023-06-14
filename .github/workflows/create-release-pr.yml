@@ -25,15 +25,13 @@ jobs:
   CreateReleasePR:
     needs: CreateReleaseBranch
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
 
     steps:
       - uses: actions/checkout@v3
 
       - name: 📝 Create Pull Request
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.CI_TOKEN }}
         run: |
           base_branch="release/${{github.ref_name}}"
           
