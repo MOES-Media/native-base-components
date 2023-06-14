@@ -53,7 +53,7 @@ const testCases = {
         )
         .toJSON()
     ).toMatchSnapshot();
-   },
+  },
   withPagination: () => {
     const { getByTestId } = render(
       <NativeBaseProvider initialWindowMetrics={inset}>

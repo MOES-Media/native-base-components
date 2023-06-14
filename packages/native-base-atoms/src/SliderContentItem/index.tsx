@@ -5,7 +5,7 @@ import Touchable from '../Touchable';
 import { SliderContentItemProps } from '../../types/SliderContentItem';
 
 const SliderContentItem: FC<SliderContentItemProps> = ({ imageSource, width, caption }) => (
-  <Touchable onPress={undefined} >
+  <Touchable onPress={undefined}>
     <Box
       alignItems="center"
       justifyContent="center"
