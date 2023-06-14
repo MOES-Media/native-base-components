@@ -4,13 +4,22 @@ on:
   workflow_run:
     workflows:
       - "Create Release PR"
+    types:
+      - completed
   pull_request:
 
 jobs:
   CheckPR:
-    runs-on: 
+    runs-on:
       - ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: 🤖 Yarn install
+        uses: ./.github/actions/yarn-install
+        with:
+          GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
       - name: 🚦 Qualtiy Gate
         uses: ./.github/actions/quality
