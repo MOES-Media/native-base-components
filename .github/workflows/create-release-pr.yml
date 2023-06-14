@@ -43,4 +43,4 @@ jobs:
           source: ${{ github.ref_name }}
           target: release/${{github.ref_name}}"
 
-          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body" --delete-branch
+          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body" -l "pre-release-candidate"
