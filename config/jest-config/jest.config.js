@@ -30,5 +30,6 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   moduleNameMapper: {
     '^@moes-media/native-base-components-atoms(.*)$': path.resolve(__dirname, '../../packages/native-base-atoms/dist/index.js'),
+    '^@moes-media/native-base-components-utils(.*)$': path.resolve(__dirname, '../../packages/utils/dist/index.js'),
   }
 };

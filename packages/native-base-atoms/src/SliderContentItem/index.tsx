@@ -5,8 +5,11 @@ import Touchable from '../Touchable';
 import { SliderContentItemProps } from '../../types/SliderContentItem';
 
 const SliderContentItem: FC<SliderContentItemProps> = ({ imageSource, width, caption }) => (
-  <Touchable onPress={undefined}>
-    <Box alignItems="center" justifyContent="center">
+  <Touchable onPress={undefined} >
+    <Box
+      alignItems="center"
+      justifyContent="center"
+      accessibilityLabel="native-base-components-slider-content-item">
       <Image height={250} width={width} source={{ uri: imageSource }} alt="image-slider-content" />
       {caption && <Caption>{caption}</Caption>}
     </Box>

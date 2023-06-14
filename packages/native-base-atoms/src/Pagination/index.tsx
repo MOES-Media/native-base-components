@@ -14,11 +14,17 @@ const Indicator: FC<IndicatorProps> = ({ isActive }) => (
     borderRadius={isMobile() ? 12 : 4}
     mr={5}
     backgroundColor={isActive ? 'amber.400' : 'coolGray.300'}
+    testID="native-base-components-pagination-indicator"
   />
 );
 
 const Pagination: FC<PaginationProps> = ({ numberOfItems, activeIndex, onIndicatorChange }) => (
-  <Box alignItems="center" justifyContent="center" flexDir="row" width="100%">
+  <Box
+    testID="native-base-components-pagination"
+    alignItems="center"
+    justifyContent="center"
+    flexDir="row"
+    width="100%">
     {Array.from({ length: numberOfItems }).map((_, idx) => (
       <Touchable onPress={() => onIndicatorChange(idx)} key={`pagination-indicator-${idx}`}>
         <Indicator isActive={idx === activeIndex} />

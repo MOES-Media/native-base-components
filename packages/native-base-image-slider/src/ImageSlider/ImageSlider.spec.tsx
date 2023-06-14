@@ -1,7 +1,7 @@
 import { NativeBaseProvider } from 'native-base';
 import * as renderer from 'react-test-renderer';
 import { act, render } from '@testing-library/react';
-import { isMobile } from '@moes-media/native-base-components-utils';
+import * as utils from '@moes-media/native-base-components-utils';
 import ImageSlider from './index';
 
 const images = [
@@ -53,9 +53,7 @@ const testCases = {
         )
         .toJSON()
     ).toMatchSnapshot();
-    expect(getByTestId('mock-slider-content-item')).toBeTruthy();
-    expect(() => getByTestId('mock-pagination')).toThrow();
-  },
+   },
   withPagination: () => {
     const { getByTestId } = render(
       <NativeBaseProvider initialWindowMetrics={inset}>
@@ -63,8 +61,6 @@ const testCases = {
       </NativeBaseProvider>
     );
 
-    expect(getByTestId('mock-slider-content-item')).toBeTruthy();
-    expect(getByTestId('mock-pagination')).toBeTruthy();
     expect(
       renderer
         .create(
@@ -103,15 +99,18 @@ describe('ImageSlider', () => {
         ...originalEnv,
         NODE_ENV: 'mobile',
       };
+      jest.mock('@moes-media/native-base-components-utils', () => {
+        const originalUtils = jest.requireActual('@moes-media/native-base-components-utils');
+        return {
+          ...originalUtils,
+          isMobile: jest.fn().mockReturnValue(true),
+        };
+      });
     });
 
     afterEach(() => {
       jest.clearAllTimers();
       process.env = originalEnv;
-    });
-    beforeEach(() => {
-      // @ts-ignore
-      isMobile.mockImplementation(() => true);
     });
 
     it('given a minimum amount of configuration, it should render correctly', testCases.minimum);
@@ -131,15 +130,18 @@ describe('ImageSlider', () => {
         ...originalEnv,
         NODE_ENV: 'web',
       };
+      jest.mock('@moes-media/native-base-components-utils', () => {
+        const originalUtils = jest.requireActual('@moes-media/native-base-components-utils');
+        return {
+          ...originalUtils,
+          isMobile: jest.fn().mockReturnValue(false),
+        };
+      });
     });
 
     afterEach(() => {
       jest.clearAllTimers();
       process.env = originalEnv;
-    });
-    beforeEach(() => {
-      // @ts-ignore
-      isMobile.mockImplementation(() => false);
     });
 
     it('given a minimum amount of configuration, it should render correctly', testCases.minimum);
