@@ -1,6 +1,7 @@
 {
   "name": "@moes-media/native-base-components",
   "packageManager": "yarn@3.5.1",
+  "node": ">=16.0.0 <18.16.0",
   "workspaces": [
     "packages/**/*",
     "apps/**/*",
