@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   preset: "jest-expo",
   transform: {
@@ -25,5 +27,8 @@ module.exports = {
   ],
   coveragePathIgnorePatterns: [],
   testEnvironment: "jsdom",
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.js']
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
+  moduleNameMapper: {
+    '^@moes-media/native-base-components-atoms(.*)$': path.resolve(__dirname, '../../packages/native-base-atoms/dist/index.js'),
+  }
 };
