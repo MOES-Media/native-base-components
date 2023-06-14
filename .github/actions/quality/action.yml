@@ -1,0 +1,20 @@
+name: Quality Gate
+description: Ensures the continued quality of the code
+
+runs:
+  using: composite
+
+  steps:
+    - name: 🧹 Lint code
+      shell: bash
+      run: yarn lint
+    - name: 🔨 Build code
+      shell: bash
+      run: yarn build
+    - name: 🧪 Run tests
+      shell: bash
+      run: yarn test
+    - name: 🔬 Analyze code
+      shell: bash
+      run: echo analysis
+    

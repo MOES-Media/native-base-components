@@ -1,0 +1,16 @@
+name: Notify on Release PR
+
+on:
+  workflow_run:
+    workflows:
+      - "Create Release PR"
+  pull_request:
+
+jobs:
+  CheckPR:
+    runs-on: 
+      - ubuntu-latest
+
+    steps:
+      - name: 🚦 Qualtiy Gate
+        uses: ./.github/actions/quality
