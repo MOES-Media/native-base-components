@@ -3,7 +3,7 @@ name: Notify on Release PR
 on:
   pull_request:
     branches:
-      - release/**
+      - release/feat/**
 
 jobs:
   SendDiscordNotification:
