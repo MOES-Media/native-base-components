@@ -109,4 +109,12 @@ const ImageSlider: FC<ImageSliderProps> = ({
   );
 };
 
+ImageSlider.defaultProps = {
+  autoPlay: false,
+  autoPlayInterval: 3000,
+  separatorWidth: 0,
+  withPagination: false,
+  width: undefined,
+};
+
 export default ImageSlider;
