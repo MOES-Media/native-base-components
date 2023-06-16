@@ -7,17 +7,20 @@ runs:
   steps:
     - name: 🌱 Initialize CodeQL
       uses: github/codeql-action/init@v2
+      with:
+        languages: typescript
     - name: 🧼 Clean Old Build Artifacts
       shell: bash
       run: yarn clean
     - name: 🧹 Lint Code
       shell: bash
       run: yarn lint
+    - name: 🔬 Analyze Code
+      uses: github/codeql-action/analyze@v2  
     - name: 🔨 Build Code
       shell: bash
       run: yarn build
     - name: 🧪 Run Unit Tests
       shell: bash
-      run: yarn test
-    - name: 🔬 Analyze Code
-      uses: github/codeql-action/analyze@v2    
+      run: yarn test 
+      
