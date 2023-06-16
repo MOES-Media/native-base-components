@@ -1,17 +1,20 @@
 {
-  "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "sourceMap": true,
     "experimentalDecorators": true,
-    "lib": ["dom", "es2015", "es2016"],
     "allowSyntheticDefaultImports": true,
-    "moduleResolution": "node",
     "noEmitHelpers": true,
     "importHelpers": true,
     "strict": true,
     "noImplicitReturns": true,
-    "skipLibCheck": true,
     "declaration": true,
-    "noEmit": false
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "react-native",
+    "lib": ["DOM", "ESNext"],
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "target": "ESNext"
   }
 }
