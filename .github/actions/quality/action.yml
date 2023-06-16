@@ -12,6 +12,7 @@ runs:
       shell: bash
       run: yarn build
     - run: cat /home/runner/work/native-base-components/native-base-components/packages/native-base-atoms/dist/index.js
+      shell: bash
     - name: 🧪 Run tests
       shell: bash
       run: yarn test
