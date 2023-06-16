@@ -4,9 +4,6 @@ description: Ensures the continued quality of the code
 runs:
   using: composite
 
-  permissions:
-    security-events: write
-
   steps:
     - name: 🌱 Initialize CodeQL
       uses: github/codeql-action/init@v2
