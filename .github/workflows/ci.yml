@@ -1,4 +1,4 @@
-name: Quality Check
+name: CI/Quality Check
 
 on:
   workflow_run:
@@ -15,7 +15,7 @@ on:
       - feat/**
 
 jobs:
-  PRQualityGate:
+  CI-Quality-Gate:
     runs-on:
       - ubuntu-latest
 

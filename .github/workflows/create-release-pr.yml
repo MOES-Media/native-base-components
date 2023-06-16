@@ -22,7 +22,7 @@ jobs:
           git checkout release/${{ github.ref_name }}
           git push -u origin release/${{ github.ref_name }}
 
-  CreateReleasePR:
+  Create-Release-PR:
     needs: CreateReleaseBranch
     runs-on: ubuntu-latest
 
