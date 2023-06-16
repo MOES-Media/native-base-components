@@ -6,6 +6,7 @@ runs:
 
   steps:
     - name: 🧼 Clean old build artifacts
+      shell: bash
       run: yarn clean
     - name: 🧹 Lint code
       shell: bash
