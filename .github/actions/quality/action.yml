@@ -5,6 +5,8 @@ runs:
   using: composite
 
   steps:
+    - name: 🧼 Clean old build artifacts
+      run: yarn clean
     - name: 🧹 Lint code
       shell: bash
       run: yarn lint
