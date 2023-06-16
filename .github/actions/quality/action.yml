@@ -4,22 +4,23 @@ description: Ensures the continued quality of the code
 runs:
   using: composite
 
+  permissions:
+    security-events: write
+
   steps:
-    - name: 🧼 Clean old build artifacts
+    - name: 🌱 Initialize CodeQL
+      uses: github/codeql-action/init@v2
+    - name: 🧼 Clean Old Build Artifacts
       shell: bash
       run: yarn clean
-    - name: 🧹 Lint code
+    - name: 🧹 Lint Code
       shell: bash
       run: yarn lint
-    - name: 🔨 Build code
+    - name: 🔨 Build Code
       shell: bash
       run: yarn build
-    - run: cat /home/runner/work/native-base-components/native-base-components/packages/native-base-atoms/dist/index.js
-      shell: bash
-    - name: 🧪 Run tests
+    - name: 🧪 Run Unit Tests
       shell: bash
       run: yarn test
-    - name: 🔬 Analyze code
-      shell: bash
-      run: echo analysis
-    
+    - name: 🔬 Analyze Code
+      uses: github/codeql-action/analyze@v2    
