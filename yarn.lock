@@ -4466,6 +4466,7 @@ __metadata:
     "@moes-media/native-base-components-eslint": "*"
     "@moes-media/native-base-components-prettier": "*"
     "@moes-media/native-base-components-ts-config": "*"
+    "@moes-media/native-base-components-typography": "*"
     "@moes-media/native-base-components-utils": "*"
     eslint: ^8.41.0
     native-base: ^3.4.28
