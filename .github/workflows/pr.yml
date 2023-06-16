@@ -1,4 +1,4 @@
-name: Release PR Quality Check
+name: Quality Check
 
 on:
   workflow_run:
@@ -9,6 +9,10 @@ on:
   pull_request:
     types:
       - opened
+  push:
+    branches:
+      - release/feat/**
+      - feat/**
 
 jobs:
   PRQualityGate:
