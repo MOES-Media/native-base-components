@@ -3,7 +3,7 @@ import { NativeBaseProvider } from 'native-base';
 
 export const decorators = [
   withBackgrounds,
-  (Story) => (
+  Story => (
     <NativeBaseProvider>
       <Story />
     </NativeBaseProvider>

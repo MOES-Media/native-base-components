@@ -13,4 +13,4 @@ export default CaptionMeta;
 
 type CaptionStory = ComponentStory<typeof Caption>;
 
-export const Default: CaptionStory = (args) => <Caption {...args} />;
+export const Default: CaptionStory = args => <Caption {...args} />;

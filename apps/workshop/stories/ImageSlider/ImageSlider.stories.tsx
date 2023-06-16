@@ -56,11 +56,11 @@ export default ImageSliderMeta;
 
 type ImageSliderStory = ComponentStory<typeof ImageSlider>;
 
-export const Default: ImageSliderStory = (args) => <ImageSlider {...args} />;
-export const withPagination: ImageSliderStory = (args) => <ImageSlider {...args} withPagination />;
-export const withCustomWidth: ImageSliderStory = (args) => (
+export const Default: ImageSliderStory = args => <ImageSlider {...args} />;
+export const withPagination: ImageSliderStory = args => <ImageSlider {...args} withPagination />;
+export const withCustomWidth: ImageSliderStory = args => (
   <ImageSlider {...args} withPagination width={275} />
 );
-export const WithCaptions: ImageSliderStory = (args) => (
+export const WithCaptions: ImageSliderStory = args => (
   <ImageSlider {...args} data={imagesWithCaptions} />
 );

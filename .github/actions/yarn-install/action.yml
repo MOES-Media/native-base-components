@@ -23,17 +23,17 @@ runs:
       id: yarn-config
       shell: bash
       env:
-        YARN_ENABLE_GLOBAL_CACHE: 'false'
+        YARN_ENABLE_GLOBAL_CACHE: "false"
       run: |
         echo "CACHE_FOLDER=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
         echo "CURRENT_NODE_VERSION="node-$(node --version)"" >> $GITHUB_OUTPUT
         echo "CURRENT_BRANCH=$(echo ${GITHUB_REF#refs/heads/} | sed -r 's,/,-,g')" >> $GITHUB_OUTPUT
-    
+
     - name: 🔒 Set npm-auth-token
       shell: bash
       run: |
         yarn config set npmScopes[moes-media].npmAuthToken ${{ inputs.GITHUB_TOKEN }}
-    
+
     - name: ♻️ Restore yarn cache
       uses: actions/cache@v3
       id: yarn-download-cache
@@ -48,18 +48,17 @@ runs:
         key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
         restore-keys: |
           ${{ runner.os }}-yarn-
-    
+
     - name: 📥 Install dependencies
       shell: bash
-      run: yarn install --immutable --inline-builds
+      run: yarn install
       env:
-        YARN_ENABLE_GLOBAL_CACHE: 'false' 
-        YARN_NM_MODE: 'hardlinks-local' 
-        YARN_INSTALL_STATE_PATH: '.yarn/ci-cache/install-state.gz' 
-        HUSKY: '0' 
-    
+        YARN_ENABLE_GLOBAL_CACHE: "false"
+        YARN_NM_MODE: "hardlinks-local"
+        YARN_INSTALL_STATE_PATH: ".yarn/ci-cache/install-state.gz"
+        HUSKY: "0"
+
     - name: 🔒 Unset npm-auth-token
       shell: bash
       run: |
         yarn config unset npmScopes[moes-media].npmAuthToken
-    
