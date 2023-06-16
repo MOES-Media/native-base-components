@@ -2,7 +2,7 @@ import { NativeBaseProvider } from 'native-base';
 import * as renderer from 'react-test-renderer';
 import { act, render } from '@testing-library/react';
 import * as utils from '@moes-media/native-base-components-utils';
-import ImageSlider from './index';
+import ImageSlider from '../src/ImageSlider/index';
 
 const images = [
   {

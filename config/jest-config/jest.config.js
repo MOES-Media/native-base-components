@@ -24,6 +24,7 @@ module.exports = {
     "src/**/*.{js,jsx,ts,tsx}",
     "!src/**/*.d.ts",
     "!src/mocks/**",
+    "!__tests__",
   ],
   coveragePathIgnorePatterns: [],
   testEnvironment: "jsdom",

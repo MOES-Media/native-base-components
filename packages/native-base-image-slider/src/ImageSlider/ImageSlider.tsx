@@ -3,11 +3,24 @@ import { FC, useEffect, useRef, useState } from 'react';
 import { Dimensions, LayoutAnimation, FlatList as NativeFlatList } from 'react-native';
 import { Pagination, SliderContentItem } from '@moes-media/native-base-components-atoms';
 import { isMobile } from '@moes-media/native-base-components-utils';
-import { ImageSliderProps } from '../../types/ImageSlider';
 
 const renderSeperator = (separatorWidth?: number) => () => <Box w={separatorWidth || 0} />;
 
 const getDefaultWidth = () => (isMobile() ? Math.round(Dimensions.get('window').width) : 290);
+
+interface ImageProps {
+  src: string;
+  caption?: string;
+}
+
+interface ImageSliderProps {
+  autoPlay?: boolean;
+  autoPlayInterval?: number;
+  data: ImageProps[];
+  separatorWidth?: number;
+  withPagination?: boolean;
+  width?: number;
+}
 
 const ImageSlider: FC<ImageSliderProps> = ({
   data,
