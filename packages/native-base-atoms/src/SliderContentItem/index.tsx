@@ -1,6 +1,6 @@
 import { Box, Image } from 'native-base';
 import { FC } from 'react';
-import { Caption } from '@moes-media/native-base-components-typography/types';
+import { Caption } from '@moes-media/native-base-components-typography';
 import Touchable from '../Touchable';
 import { SliderContentItemProps } from '../../types/SliderContentItem';
 
