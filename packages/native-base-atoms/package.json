@@ -11,7 +11,8 @@
     "prettier:format": "prettier --write '**/*.{js,ts,tsx,jsx}'"
   },
   "dependencies": {
-    "@moes-media/native-base-components-utils": "*"
+    "@moes-media/native-base-components-utils": "*",
+    "@moes-media/native-base-components-typography": "*"
   },
   "devDependencies": {
     "@moes-media/native-base-components-eslint": "*",
