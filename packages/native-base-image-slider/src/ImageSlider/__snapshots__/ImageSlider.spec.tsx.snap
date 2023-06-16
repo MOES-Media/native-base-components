@@ -131,6 +131,7 @@ exports[`ImageSlider AutoPlay given a custom autoPlayInterval the component shou
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -233,6 +234,7 @@ exports[`ImageSlider AutoPlay given a custom autoPlayInterval the component shou
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -335,6 +337,7 @@ exports[`ImageSlider AutoPlay given a custom autoPlayInterval the component shou
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -520,6 +523,7 @@ exports[`ImageSlider AutoPlay given a custom autoPlayInterval the component shou
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -622,6 +626,7 @@ exports[`ImageSlider AutoPlay given a custom autoPlayInterval the component shou
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -724,6 +729,7 @@ exports[`ImageSlider AutoPlay given a custom autoPlayInterval the component shou
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -909,6 +915,7 @@ exports[`ImageSlider AutoPlay given the autoPlay prop it should autoplay the sli
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -1011,6 +1018,7 @@ exports[`ImageSlider AutoPlay given the autoPlay prop it should autoplay the sli
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -1113,6 +1121,7 @@ exports[`ImageSlider AutoPlay given the autoPlay prop it should autoplay the sli
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -1298,6 +1307,7 @@ exports[`ImageSlider AutoPlay given the autoPlay prop it should autoplay the sli
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -1400,6 +1410,7 @@ exports[`ImageSlider AutoPlay given the autoPlay prop it should autoplay the sli
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -1502,6 +1513,7 @@ exports[`ImageSlider AutoPlay given the autoPlay prop it should autoplay the sli
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -1690,6 +1702,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -1754,6 +1767,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
             "width": "100%",
           }
         }
+        testID="native-base-components-pagination"
       >
         <View
           accessibilityState={
@@ -1800,6 +1814,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
                 "width": 48,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
         <View
@@ -1847,6 +1862,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
                 "width": 16,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
         <View
@@ -1894,6 +1910,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
                 "width": 16,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
         <View
@@ -1941,6 +1958,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
                 "width": 16,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
         <View
@@ -1988,6 +2006,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
                 "width": 16,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
       </View>
@@ -2130,6 +2149,7 @@ exports[`ImageSlider Mobile given a minimum amount of configuration, it should r
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -2314,6 +2334,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
@@ -2378,6 +2399,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
             "width": "100%",
           }
         }
+        testID="native-base-components-pagination"
       >
         <View
           accessibilityState={
@@ -2424,6 +2446,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
                 "width": 48,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
         <View
@@ -2471,6 +2494,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
                 "width": 16,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
         <View
@@ -2518,6 +2542,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
                 "width": 16,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
         <View
@@ -2565,6 +2590,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
                 "width": 16,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
         <View
@@ -2612,6 +2638,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
                 "width": 16,
               }
             }
+            testID="native-base-components-pagination-indicator"
           />
         </View>
       </View>
@@ -2754,6 +2781,7 @@ exports[`ImageSlider Web given a minimum amount of configuration, it should rend
             }
           >
             <View
+              accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
               style={
                 {
