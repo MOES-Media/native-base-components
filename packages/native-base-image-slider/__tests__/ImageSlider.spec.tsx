@@ -157,8 +157,8 @@ describe('ImageSlider', () => {
       };
       jest.mock('react-native/Libraries/Utilities/Platform', () => ({
         OS: 'notMobile',
-        select: () => null
-    }));
+        select: () => null,
+      }));
     });
 
     afterEach(() => {
