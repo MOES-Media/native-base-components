@@ -25,7 +25,7 @@
         "dependsOn": ["^build"]
       },
       "test": {
-        "inputs": ["src/**/*.{cjs,mjs,js,jsx,cts,mts,ts,tsx}", "test/**/*.{cjs,mjs,js,jsx,cts,mts,ts,tsx}", "package.json"],
+        "inputs": ["src/**/*.{cjs,mjs,js,jsx,cts,mts,ts,tsx}", "__tests__/**/*.{cjs,mjs,js,jsx,cts,mts,ts,tsx}", "package.json"],
         "dependsOn": ["^build"]
       },
       "release": {

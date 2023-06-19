@@ -1,0 +1,57 @@
+name: Service/Merge To Dev
+
+on:
+  pull_request:
+    types:
+      - synchronize
+      - opened
+      - reopened
+      - ready_for_review
+    branches:
+      - development
+
+jobs:
+  Quality-Gate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: 🤖 Yarn install
+        uses: ./.github/actions/yarn-install
+        with:
+          GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
+      - name: 🚦 Qualtiy Gate
+        uses: ./.github/actions/quality
+  
+  Check-Merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Check For Merge Conflicts
+        run: |
+          # Get the branch name and PR number
+          PR_NUMBER=$(echo "${{ github.event.pull_request.url }}" | awk -F/ '{print $NF}')
+          BRANCH_NAME=$(echo "${{ github.event.pull_request.head.ref }}")
+
+          # Get the current commit hash
+          CURRENT_COMMIT=$(git rev-parse HEAD)
+
+          # Fetch the latest changes
+          git fetch origin $BRANCH_NAME
+
+          # Check if there are merge conflicts
+          git merge-base --is-ancestor $CURRENT_COMMIT origin/$BRANCH_NAME
+          CONFLICTS=$?
+
+          # Output the check status
+          if [ $CONFLICTS -eq 0 ]; then
+            echo "::set-output name=checks_success::true"
+          else
+            echo "::set-output name=checks_success::false"
+          fi

@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+      "composite": true,
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "declarationMap": true,
+      "sourceMap": true,
+  
+      "module": "esnext",
+      "target": "es5",
+      "lib": ["es2020", "dom"],
+      "jsx": "preserve",
+      "moduleResolution": "node",
+      "downlevelIteration": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "noErrorTruncation": false,
+      "skipLibCheck": true
+    }
+  }

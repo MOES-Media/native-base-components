@@ -27,7 +27,7 @@ module.exports = {
     "!__tests__",
   ],
   coveragePathIgnorePatterns: [],
-  testEnvironment: "jsdom",
+  testEnvironment: "node",
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
   moduleNameMapper: {
     "^@moes-media/native-base-components-atoms(.*)$": path.resolve(

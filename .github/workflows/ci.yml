@@ -3,7 +3,7 @@ name: CI/Quality Check
 on:
   workflow_run:
     workflows:
-      - "Create Release PR"
+      - "Service/Create Release PR"
     types:
       - completed
   pull_request:
