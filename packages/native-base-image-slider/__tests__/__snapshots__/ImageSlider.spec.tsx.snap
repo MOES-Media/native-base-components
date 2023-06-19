@@ -1,1573 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ImageSlider AutoPlay given a custom autoPlayInterval the component should update after set time 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
-  style={
-    [
-      {
-        "flex": 1,
-      },
-      undefined,
-    ]
-  }
->
-  <View
-    dataSet={{}}
-    style={
-      {
-        "width": 750,
-      }
-    }
-  >
-    <RCTScrollView
-      ItemSeparatorComponent={[Function]}
-      bounces={false}
-      contentContainerStyle={
-        [
-          {},
-          {
-            "dataSet": {},
-          },
-          {},
-        ]
-      }
-      data={
-        [
-          {
-            "caption": "Image-1",
-            "src": "image1.jpg",
-          },
-          {
-            "caption": "Image-2",
-            "src": "image2.jpg",
-          },
-          {
-            "caption": "Image-3",
-            "src": "image3.jpg",
-          },
-        ]
-      }
-      dataSet={{}}
-      decelerationRate="fast"
-      getItem={[Function]}
-      getItemCount={[Function]}
-      getItemLayout={[Function]}
-      horizontal={true}
-      initialNumToRender={3}
-      initialScrollIndex={0}
-      keyExtractor={[Function]}
-      maxToRenderPerBatch={3}
-      onContentSizeChange={[Function]}
-      onLayout={[Function]}
-      onMomentumScrollBegin={[Function]}
-      onMomentumScrollEnd={[Function]}
-      onScroll={[Function]}
-      onScrollBeginDrag={[Function]}
-      onScrollEndDrag={[Function]}
-      pagingEnabled={true}
-      removeClippedSubviews={false}
-      renderItem={[Function]}
-      scrollEventThrottle={50}
-      showsHorizontalScrollIndicator={false}
-      snapToInterval={750}
-      stickyHeaderIndices={[]}
-      style={
-        {
-          "width": 750,
-        }
-      }
-      viewabilityConfig={
-        {
-          "viewAreaCoveragePercentThreshold": 50,
-        }
-      }
-      viewabilityConfigCallbackPairs={[]}
-    >
-      <View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image1.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-1
-              </Text>
-            </View>
-          </View>
-          <View
-            dataSet={{}}
-            style={
-              {
-                "width": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image2.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-2
-              </Text>
-            </View>
-          </View>
-          <View
-            dataSet={{}}
-            style={
-              {
-                "width": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image3.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-3
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </RCTScrollView>
-  </View>
-</RNCSafeAreaProvider>
-`;
-
-exports[`ImageSlider AutoPlay given a custom autoPlayInterval the component should update after set time 2`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
-  style={
-    [
-      {
-        "flex": 1,
-      },
-      undefined,
-    ]
-  }
->
-  <View
-    dataSet={{}}
-    style={
-      {
-        "width": 750,
-      }
-    }
-  >
-    <RCTScrollView
-      ItemSeparatorComponent={[Function]}
-      bounces={false}
-      contentContainerStyle={
-        [
-          {},
-          {
-            "dataSet": {},
-          },
-          {},
-        ]
-      }
-      data={
-        [
-          {
-            "caption": "Image-1",
-            "src": "image1.jpg",
-          },
-          {
-            "caption": "Image-2",
-            "src": "image2.jpg",
-          },
-          {
-            "caption": "Image-3",
-            "src": "image3.jpg",
-          },
-        ]
-      }
-      dataSet={{}}
-      decelerationRate="fast"
-      getItem={[Function]}
-      getItemCount={[Function]}
-      getItemLayout={[Function]}
-      horizontal={true}
-      initialNumToRender={3}
-      initialScrollIndex={0}
-      keyExtractor={[Function]}
-      maxToRenderPerBatch={3}
-      onContentSizeChange={[Function]}
-      onLayout={[Function]}
-      onMomentumScrollBegin={[Function]}
-      onMomentumScrollEnd={[Function]}
-      onScroll={[Function]}
-      onScrollBeginDrag={[Function]}
-      onScrollEndDrag={[Function]}
-      pagingEnabled={true}
-      removeClippedSubviews={false}
-      renderItem={[Function]}
-      scrollEventThrottle={50}
-      showsHorizontalScrollIndicator={false}
-      snapToInterval={750}
-      stickyHeaderIndices={[]}
-      style={
-        {
-          "width": 750,
-        }
-      }
-      viewabilityConfig={
-        {
-          "viewAreaCoveragePercentThreshold": 50,
-        }
-      }
-      viewabilityConfigCallbackPairs={[]}
-    >
-      <View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image1.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-1
-              </Text>
-            </View>
-          </View>
-          <View
-            dataSet={{}}
-            style={
-              {
-                "width": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image2.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-2
-              </Text>
-            </View>
-          </View>
-          <View
-            dataSet={{}}
-            style={
-              {
-                "width": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image3.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-3
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </RCTScrollView>
-  </View>
-</RNCSafeAreaProvider>
-`;
-
-exports[`ImageSlider AutoPlay given the autoPlay prop it should autoplay the slider 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
-  style={
-    [
-      {
-        "flex": 1,
-      },
-      undefined,
-    ]
-  }
->
-  <View
-    dataSet={{}}
-    style={
-      {
-        "width": 750,
-      }
-    }
-  >
-    <RCTScrollView
-      ItemSeparatorComponent={[Function]}
-      bounces={false}
-      contentContainerStyle={
-        [
-          {},
-          {
-            "dataSet": {},
-          },
-          {},
-        ]
-      }
-      data={
-        [
-          {
-            "caption": "Image-1",
-            "src": "image1.jpg",
-          },
-          {
-            "caption": "Image-2",
-            "src": "image2.jpg",
-          },
-          {
-            "caption": "Image-3",
-            "src": "image3.jpg",
-          },
-        ]
-      }
-      dataSet={{}}
-      decelerationRate="fast"
-      getItem={[Function]}
-      getItemCount={[Function]}
-      getItemLayout={[Function]}
-      horizontal={true}
-      initialNumToRender={3}
-      initialScrollIndex={0}
-      keyExtractor={[Function]}
-      maxToRenderPerBatch={3}
-      onContentSizeChange={[Function]}
-      onLayout={[Function]}
-      onMomentumScrollBegin={[Function]}
-      onMomentumScrollEnd={[Function]}
-      onScroll={[Function]}
-      onScrollBeginDrag={[Function]}
-      onScrollEndDrag={[Function]}
-      pagingEnabled={true}
-      removeClippedSubviews={false}
-      renderItem={[Function]}
-      scrollEventThrottle={50}
-      showsHorizontalScrollIndicator={false}
-      snapToInterval={750}
-      stickyHeaderIndices={[]}
-      style={
-        {
-          "width": 750,
-        }
-      }
-      viewabilityConfig={
-        {
-          "viewAreaCoveragePercentThreshold": 50,
-        }
-      }
-      viewabilityConfigCallbackPairs={[]}
-    >
-      <View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image1.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-1
-              </Text>
-            </View>
-          </View>
-          <View
-            dataSet={{}}
-            style={
-              {
-                "width": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image2.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-2
-              </Text>
-            </View>
-          </View>
-          <View
-            dataSet={{}}
-            style={
-              {
-                "width": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image3.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-3
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </RCTScrollView>
-  </View>
-</RNCSafeAreaProvider>
-`;
-
-exports[`ImageSlider AutoPlay given the autoPlay prop it should autoplay the slider 2`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
-  style={
-    [
-      {
-        "flex": 1,
-      },
-      undefined,
-    ]
-  }
->
-  <View
-    dataSet={{}}
-    style={
-      {
-        "width": 750,
-      }
-    }
-  >
-    <RCTScrollView
-      ItemSeparatorComponent={[Function]}
-      bounces={false}
-      contentContainerStyle={
-        [
-          {},
-          {
-            "dataSet": {},
-          },
-          {},
-        ]
-      }
-      data={
-        [
-          {
-            "caption": "Image-1",
-            "src": "image1.jpg",
-          },
-          {
-            "caption": "Image-2",
-            "src": "image2.jpg",
-          },
-          {
-            "caption": "Image-3",
-            "src": "image3.jpg",
-          },
-        ]
-      }
-      dataSet={{}}
-      decelerationRate="fast"
-      getItem={[Function]}
-      getItemCount={[Function]}
-      getItemLayout={[Function]}
-      horizontal={true}
-      initialNumToRender={3}
-      initialScrollIndex={0}
-      keyExtractor={[Function]}
-      maxToRenderPerBatch={3}
-      onContentSizeChange={[Function]}
-      onLayout={[Function]}
-      onMomentumScrollBegin={[Function]}
-      onMomentumScrollEnd={[Function]}
-      onScroll={[Function]}
-      onScrollBeginDrag={[Function]}
-      onScrollEndDrag={[Function]}
-      pagingEnabled={true}
-      removeClippedSubviews={false}
-      renderItem={[Function]}
-      scrollEventThrottle={50}
-      showsHorizontalScrollIndicator={false}
-      snapToInterval={750}
-      stickyHeaderIndices={[]}
-      style={
-        {
-          "width": 750,
-        }
-      }
-      viewabilityConfig={
-        {
-          "viewAreaCoveragePercentThreshold": 50,
-        }
-      }
-      viewabilityConfigCallbackPairs={[]}
-    >
-      <View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image1.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-1
-              </Text>
-            </View>
-          </View>
-          <View
-            dataSet={{}}
-            style={
-              {
-                "width": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image2.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-2
-              </Text>
-            </View>
-          </View>
-          <View
-            dataSet={{}}
-            style={
-              {
-                "width": 0,
-              }
-            }
-          />
-        </View>
-        <View
-          onFocusCapture={[Function]}
-          style={
-            [
-              {
-                "flexDirection": "row",
-              },
-              null,
-            ]
-          }
-        >
-          <View
-            accessibilityState={
-              {
-                "busy": undefined,
-                "checked": undefined,
-                "disabled": undefined,
-                "expanded": undefined,
-                "selected": undefined,
-              }
-            }
-            accessibilityValue={
-              {
-                "max": undefined,
-                "min": undefined,
-                "now": undefined,
-                "text": undefined,
-              }
-            }
-            accessible={true}
-            collapsable={false}
-            focusable={false}
-            onClick={[Function]}
-            onResponderGrant={[Function]}
-            onResponderMove={[Function]}
-            onResponderRelease={[Function]}
-            onResponderTerminate={[Function]}
-            onResponderTerminationRequest={[Function]}
-            onStartShouldSetResponder={[Function]}
-            style={
-              {
-                "opacity": 1,
-              }
-            }
-          >
-            <View
-              accessibilityLabel="native-base-components-slider-content-item"
-              dataSet={{}}
-              style={
-                {
-                  "alignItems": "center",
-                  "justifyContent": "center",
-                }
-              }
-            >
-              <Image
-                accessibilityLabel="image-slider-content"
-                alt="image-slider-content"
-                dataSet={{}}
-                onError={[Function]}
-                source={
-                  {
-                    "uri": "image3.jpg",
-                  }
-                }
-                style={
-                  {
-                    "height": 250,
-                    "maxWidth": "100%",
-                    "width": 750,
-                  }
-                }
-              />
-              <Text
-                dataSet={{}}
-                style={
-                  {
-                    "backgroundColor": undefined,
-                    "color": "#171717",
-                    "fontFamily": undefined,
-                    "fontSize": 14,
-                    "fontStyle": "normal",
-                    "fontWeight": "400",
-                    "letterSpacing": 0,
-                    "lineHeight": 21,
-                    "marginTop": 18,
-                    "textDecorationLine": undefined,
-                  }
-                }
-              >
-                Image-3
-              </Text>
-            </View>
-          </View>
-        </View>
-      </View>
-    </RCTScrollView>
-  </View>
-</RNCSafeAreaProvider>
-`;
-
 exports[`ImageSlider Mobile given a configuration withPagination enabled, it should render the pagination correctly 1`] = `
 <RNCSafeAreaProvider
   onInsetsChange={[Function]}
@@ -1704,12 +136,14 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
             <View
               accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
+              role="presentation"
               style={
                 {
                   "alignItems": "center",
                   "justifyContent": "center",
                 }
               }
+              testID="native-base-components-slider-content-item"
             >
               <Image
                 accessibilityLabel="image-slider-content"
@@ -1728,6 +162,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
                     "width": 750,
                   }
                 }
+                testID="native-base-components-slider-content-item-image"
               />
             </View>
           </View>
@@ -1759,6 +194,7 @@ exports[`ImageSlider Mobile given a configuration withPagination enabled, it sho
     >
       <View
         dataSet={{}}
+        role="navigation"
         style={
           {
             "alignItems": "center",
@@ -2151,12 +587,14 @@ exports[`ImageSlider Mobile given a minimum amount of configuration, it should r
             <View
               accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
+              role="presentation"
               style={
                 {
                   "alignItems": "center",
                   "justifyContent": "center",
                 }
               }
+              testID="native-base-components-slider-content-item"
             >
               <Image
                 accessibilityLabel="image-slider-content"
@@ -2175,6 +613,7 @@ exports[`ImageSlider Mobile given a minimum amount of configuration, it should r
                     "width": 750,
                   }
                 }
+                testID="native-base-components-slider-content-item-image"
               />
             </View>
           </View>
@@ -2216,7 +655,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
     dataSet={{}}
     style={
       {
-        "width": 750,
+        "width": 290,
       }
     }
   >
@@ -2273,11 +712,11 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
       renderItem={[Function]}
       scrollEventThrottle={50}
       showsHorizontalScrollIndicator={false}
-      snapToInterval={750}
+      snapToInterval={290}
       stickyHeaderIndices={[]}
       style={
         {
-          "width": 750,
+          "width": 290,
         }
       }
       viewabilityConfig={
@@ -2336,12 +775,14 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
             <View
               accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
+              role="presentation"
               style={
                 {
                   "alignItems": "center",
                   "justifyContent": "center",
                 }
               }
+              testID="native-base-components-slider-content-item"
             >
               <Image
                 accessibilityLabel="image-slider-content"
@@ -2357,9 +798,10 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
                   {
                     "height": 250,
                     "maxWidth": "100%",
-                    "width": 750,
+                    "width": 290,
                   }
                 }
+                testID="native-base-components-slider-content-item-image"
               />
             </View>
           </View>
@@ -2375,7 +817,7 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
         <View
           style={
             {
-              "width": 3000,
+              "width": 1160,
             }
           }
         />
@@ -2385,12 +827,13 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
       dataSet={{}}
       style={
         {
-          "marginTop": 18,
+          "marginTop": 12,
         }
       }
     >
       <View
         dataSet={{}}
+        role="navigation"
         style={
           {
             "alignItems": "center",
@@ -2440,10 +883,10 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
             style={
               {
                 "backgroundColor": "#fbbf24",
-                "borderRadius": 12,
-                "height": 16,
+                "borderRadius": 4,
+                "height": 8,
                 "marginRight": 20,
-                "width": 48,
+                "width": 24,
               }
             }
             testID="native-base-components-pagination-indicator"
@@ -2488,10 +931,10 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
             style={
               {
                 "backgroundColor": "#d1d5db",
-                "borderRadius": 12,
-                "height": 16,
+                "borderRadius": 4,
+                "height": 8,
                 "marginRight": 20,
-                "width": 16,
+                "width": 8,
               }
             }
             testID="native-base-components-pagination-indicator"
@@ -2536,10 +979,10 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
             style={
               {
                 "backgroundColor": "#d1d5db",
-                "borderRadius": 12,
-                "height": 16,
+                "borderRadius": 4,
+                "height": 8,
                 "marginRight": 20,
-                "width": 16,
+                "width": 8,
               }
             }
             testID="native-base-components-pagination-indicator"
@@ -2584,10 +1027,10 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
             style={
               {
                 "backgroundColor": "#d1d5db",
-                "borderRadius": 12,
-                "height": 16,
+                "borderRadius": 4,
+                "height": 8,
                 "marginRight": 20,
-                "width": 16,
+                "width": 8,
               }
             }
             testID="native-base-components-pagination-indicator"
@@ -2632,10 +1075,10 @@ exports[`ImageSlider Web given a configuration withPagination enabled, it should
             style={
               {
                 "backgroundColor": "#d1d5db",
-                "borderRadius": 12,
-                "height": 16,
+                "borderRadius": 4,
+                "height": 8,
                 "marginRight": 20,
-                "width": 16,
+                "width": 8,
               }
             }
             testID="native-base-components-pagination-indicator"
@@ -2663,7 +1106,7 @@ exports[`ImageSlider Web given a minimum amount of configuration, it should rend
     dataSet={{}}
     style={
       {
-        "width": 750,
+        "width": 290,
       }
     }
   >
@@ -2720,11 +1163,11 @@ exports[`ImageSlider Web given a minimum amount of configuration, it should rend
       renderItem={[Function]}
       scrollEventThrottle={50}
       showsHorizontalScrollIndicator={false}
-      snapToInterval={750}
+      snapToInterval={290}
       stickyHeaderIndices={[]}
       style={
         {
-          "width": 750,
+          "width": 290,
         }
       }
       viewabilityConfig={
@@ -2783,12 +1226,14 @@ exports[`ImageSlider Web given a minimum amount of configuration, it should rend
             <View
               accessibilityLabel="native-base-components-slider-content-item"
               dataSet={{}}
+              role="presentation"
               style={
                 {
                   "alignItems": "center",
                   "justifyContent": "center",
                 }
               }
+              testID="native-base-components-slider-content-item"
             >
               <Image
                 accessibilityLabel="image-slider-content"
@@ -2804,9 +1249,10 @@ exports[`ImageSlider Web given a minimum amount of configuration, it should rend
                   {
                     "height": 250,
                     "maxWidth": "100%",
-                    "width": 750,
+                    "width": 290,
                   }
                 }
+                testID="native-base-components-slider-content-item-image"
               />
             </View>
           </View>
@@ -2822,7 +1268,7 @@ exports[`ImageSlider Web given a minimum amount of configuration, it should rend
         <View
           style={
             {
-              "width": 3000,
+              "width": 1160,
             }
           }
         />

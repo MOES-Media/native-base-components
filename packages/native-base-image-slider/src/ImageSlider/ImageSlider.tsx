@@ -48,7 +48,7 @@ const ImageSlider: FC<ImageSliderProps> = ({
         }
         return idx + 1;
       });
-    }, autoPlayInterval || 3000);
+    }, autoPlayInterval);
     return () => {
       clearInterval(timerId);
     };

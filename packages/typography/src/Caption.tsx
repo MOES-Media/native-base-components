@@ -10,6 +10,7 @@ const textSize = (size?: 'sm' | 'lg') => {
 
 const Caption: FC<PropsWithChildren<CaptionProps>> = ({ children, size }) => (
   <Text
+    testID="native-base-componentes-typography-caption"
     fontSize={textSize(size)}
     letterSpacing={0}
     lineHeight={21}

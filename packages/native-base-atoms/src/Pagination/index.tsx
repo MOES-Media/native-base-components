@@ -24,6 +24,7 @@ const Pagination: FC<PaginationProps> = ({ numberOfItems, activeIndex, onIndicat
     alignItems="center"
     justifyContent="center"
     flexDir="row"
+    role="navigation"
     width="100%">
     {Array.from({ length: numberOfItems }).map((_, idx) => (
       <Touchable onPress={() => onIndicatorChange(idx)} key={`pagination-indicator-${idx}`}>

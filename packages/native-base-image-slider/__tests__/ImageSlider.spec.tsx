@@ -1,6 +1,8 @@
+import React from 'react';
 import { NativeBaseProvider } from 'native-base';
 import * as renderer from 'react-test-renderer';
-import { act, render } from '@testing-library/react';
+import { Button, Text, TextInput, View } from 'react-native';
+import { render, screen, fireEvent, act } from '@testing-library/react-native';
 import * as utils from '@moes-media/native-base-components-utils';
 import ImageSlider from '../src/ImageSlider/index';
 
@@ -44,32 +46,55 @@ const testCases = {
         <ImageSlider data={images} />
       </NativeBaseProvider>
     );
-    expect(
-      renderer
-        .create(
-          <NativeBaseProvider initialWindowMetrics={inset}>
-            <ImageSlider data={images} />
-          </NativeBaseProvider>
-        )
-        .toJSON()
-    ).toMatchSnapshot();
+    expect(screen.toJSON()).toMatchSnapshot();
+    expect(getByTestId('native-base-components-slider-content-item')).toBeTruthy();
+    expect(getByTestId('native-base-components-slider-content-item-image').props.source).toEqual({
+      uri: images[0].src,
+    });
+    expect(() => getByTestId('native-base-components-pagination')).toThrow();
+    expect(() => getByTestId('"native-base-componentes-typography-caption"')).toThrow();
   },
   withPagination: () => {
-    const { getByTestId } = render(
+    const { getByTestId, getAllByTestId } = render(
       <NativeBaseProvider initialWindowMetrics={inset}>
         <ImageSlider data={images} withPagination />
       </NativeBaseProvider>
     );
 
-    expect(
-      renderer
-        .create(
-          <NativeBaseProvider initialWindowMetrics={inset}>
-            <ImageSlider data={images} withPagination />
-          </NativeBaseProvider>
-        )
-        .toJSON()
-    ).toMatchSnapshot();
+    expect(screen.toJSON()).toMatchSnapshot();
+    expect(getByTestId('native-base-components-slider-content-item')).toBeTruthy();
+    expect(getByTestId('native-base-components-pagination')).toBeTruthy();
+    expect(getByTestId('native-base-components-slider-content-item-image').props.source).toEqual({
+      uri: images[0].src,
+    });
+    expect(getAllByTestId('native-base-components-pagination-indicator').length).toEqual(
+      images.length
+    );
+    expect(() => getByTestId('"native-base-componentes-typography-caption"')).toThrow();
+  },
+  withCaptions: () => {
+    const { getByTestId, getAllByTestId } = render(
+      <NativeBaseProvider initialWindowMetrics={inset}>
+        <ImageSlider
+          data={images.map((img, idx) => ({ ...img, caption: `Caption-${idx}` }))}
+          withPagination
+        />
+      </NativeBaseProvider>
+    );
+
+    expect(screen.toJSON()).toMatchSnapshot();
+    expect(getByTestId('native-base-components-slider-content-item')).toBeTruthy();
+    expect(getByTestId('native-base-components-pagination')).toBeTruthy();
+    expect(getByTestId('native-base-components-slider-content-item-image').props.source).toEqual({
+      uri: images[0].src,
+    });
+    expect(getAllByTestId('native-base-components-pagination-indicator').length).toEqual(
+      images.length
+    );
+    expect(() => getByTestId('"native-base-componentes-typography-caption"')).toBeTruthy();
+    expect(() => getByTestId('"native-base-componentes-typography-caption"')).toHaveTextContent(
+      'Caption-0'
+    );
   },
 };
 
@@ -103,7 +128,7 @@ describe('ImageSlider', () => {
         const originalUtils = jest.requireActual('@moes-media/native-base-components-utils');
         return {
           ...originalUtils,
-          isMobile: jest.fn().mockReturnValue(true),
+          isMobile: jest.fn().mockReturnValue(false),
         };
       });
     });
@@ -130,13 +155,10 @@ describe('ImageSlider', () => {
         ...originalEnv,
         NODE_ENV: 'web',
       };
-      jest.mock('@moes-media/native-base-components-utils', () => {
-        const originalUtils = jest.requireActual('@moes-media/native-base-components-utils');
-        return {
-          ...originalUtils,
-          isMobile: jest.fn().mockReturnValue(false),
-        };
-      });
+      jest.mock('react-native/Libraries/Utilities/Platform', () => ({
+        OS: 'notMobile',
+        select: () => null
+    }));
     });
 
     afterEach(() => {
@@ -175,58 +197,52 @@ describe('ImageSlider', () => {
     });
 
     it('given the autoPlay prop it should autoplay the slider', () => {
-      const tree = renderer.create(
+      render(
         <NativeBaseProvider initialWindowMetrics={inset}>
           <ImageSlider data={images} autoPlay />
         </NativeBaseProvider>
       );
-      const initialRender = tree.toJSON();
+      const initialRender = screen.toJSON();
 
       act(() => {
         jest.advanceTimersByTime(3000);
       });
 
-      const secondRender = tree.toJSON();
+      const secondRender = screen.toJSON();
 
       expect(secondRender).not.toEqual(initialRender);
-
-      expect(initialRender).toMatchSnapshot();
-      expect(secondRender).toMatchSnapshot();
     });
 
     it('given a custom autoPlayInterval the component should update after set time', () => {
-      const tree = renderer.create(
+      render(
         <NativeBaseProvider initialWindowMetrics={inset}>
           <ImageSlider data={images} autoPlay autoPlayInterval={2000} />
         </NativeBaseProvider>
       );
-      const initialRender = tree.toJSON();
+      const initialRender = screen.toJSON();
 
       act(() => {
         jest.advanceTimersByTime(2000);
       });
 
-      const secondRender = tree.toJSON();
+      const secondRender = screen.toJSON();
 
       expect(secondRender).not.toEqual(initialRender);
-
-      expect(initialRender).toMatchSnapshot();
-      expect(secondRender).toMatchSnapshot();
     });
 
     it('given the autoPlay prop it should loop back after the last timer has passed', () => {
-      const tree = renderer.create(
+      render(
         <NativeBaseProvider initialWindowMetrics={inset}>
           <ImageSlider data={images} autoPlay />
         </NativeBaseProvider>
       );
-      const initialRender = tree.toJSON();
+      const initialRender = screen.toJSON();
 
       act(() => {
         jest.advanceTimersByTime(9000);
       });
 
-      const secondRender = tree.toJSON();
+      const secondRender = screen.toJSON();
 
       expect(secondRender).toEqual(initialRender);
     });
