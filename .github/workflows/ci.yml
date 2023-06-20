@@ -34,3 +34,13 @@ jobs:
           GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
       - name: 🚦 Qualtiy Gate
         uses: ./.github/actions/quality
+      - name: Trigger status event
+        run: >-
+          curl -L -X POST 
+          -H "Content-Type: application/json"
+          -H "Authorization: token ${{ secrets.GITHCI_TOOKENUB_PAT}}"
+          -d '{
+            "state": "success",
+            "description": "Quality Gate Passed", "context": "native-base-components/ci-success"
+          }'
+          "https://api.github.com/repos/${GITHUB_REPOSITORY}/statuses/${GITHUB_SHA}"

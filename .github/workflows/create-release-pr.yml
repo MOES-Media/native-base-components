@@ -35,10 +35,11 @@ jobs:
         run: |
           base_branch="release/${{github.ref_name}}"
           
-          pr_title="Release ${{github.ref_name}}"
+          pr_title="Feature RC ${{github.ref_name}}"
           
-          pr_body="Automated Release PR from ${{ github.ref_name }}
+          pr_body="
+          Automated Feature RC PR from ${{ github.ref_name }}
           source: ${{ github.ref_name }}
           target: release/${{github.ref_name}}"
 
-          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body" -l "pre-release-candidate"
+          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body" -l "feature-release-candidate"
