@@ -34,9 +34,8 @@ jobs:
           GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
       - name: 🚦 Qualtiy Gate
         uses: ./.github/actions/quality
-      - run: echo ${{ !startsWith(github.ref, 'refs/heads/release') }} 
   
-  Merge-To-Develop:
+  Create-RC-PR:
     needs: CI-Quality-Gate
     if: ${{ startsWith(github.ref, 'refs/heads/release') }}
     runs-on: 
@@ -51,7 +50,9 @@ jobs:
                     "https://api.github.com/repos/${{ github.repository }}/pulls?state=open" | \
                     jq --arg branch "$branch_name" '.[] | select(.base.ref == $branch) | length')
           echo "pr_exists=$(test "$pr_count" -ne 0 && echo "true" || echo "false")" >> $GITHUB_OUTPUT
-      - run: echo ${{ steps.pr-check.outputs.pr_exists }}
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
       - name: 📝 Create Pull Request
         if: steps.pr-check.outputs.pr_exists == 'false'
         env:
