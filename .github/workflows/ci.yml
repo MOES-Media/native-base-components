@@ -35,10 +35,14 @@ jobs:
       - name: 🚦 Qualtiy Gate
         uses: ./.github/actions/quality
       - run: echo ${{ !startsWith(github.ref, 'refs/heads/release') }} 
-      - if: ${{ !startsWith(github.ref, 'refs/heads/release/feat') }}
-        run: |
-          echo "The branch does not start with 'release/feat'. Exiting..."
-          exit 0
+  
+  Merge-To-Develop:
+    needs: CI-Quality-Gate
+    if: ${{ !startsWith(github.ref, 'refs/heads/release') }}
+    runs-on: 
+      - ubuntu-latest
+
+    steps:
       - name: Check for existing PR
         id: pr-check
         run: |
