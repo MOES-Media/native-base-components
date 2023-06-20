@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - develop
 
 jobs:
   Release:
@@ -23,10 +24,16 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
 
+      - name: 💡 Changesets
+        uses: './.github/actions/prepare-release'
+        with:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+
       - name: Release native-base-components
         run: yarn release
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+          
       - name: Publish native-base-components
         run: npm publish
         env:

@@ -1,0 +1,70 @@
+name: CI/Quality Check
+
+on:
+  workflow_run:
+    workflows:
+      - "Service/Create Release PR"
+    types:
+      - completed
+  pull_request:
+    types:
+      - opened
+  push:
+    branches:
+      - release/feat/**
+      - release/fix/**
+      - feat/**
+      - fix/**
+
+jobs:
+  CI-Quality-Gate:
+    runs-on:
+      - ubuntu-latest
+
+    permissions:
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: 🤖 Yarn install
+        uses: ./.github/actions/yarn-install
+        with:
+          GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
+      - name: 🚦 Qualtiy Gate
+        uses: ./.github/actions/quality
+  
+  Create-RC-PR:
+    needs: CI-Quality-Gate
+    if: ${{ startsWith(github.ref, 'refs/heads/release') }}
+    runs-on: 
+      - ubuntu-latest
+
+    steps:
+      - name: Check for existing PR
+        id: pr-check
+        run: |
+          branch_name=$(echo "${{ github.ref }}" | sed 's/^refs\/heads\///')
+          pr_count=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                    "https://api.github.com/repos/${{ github.repository }}/pulls?state=open" | \
+                    jq --arg branch "$branch_name" '.[] | select(.base.ref == $branch) | length')
+          echo "pr_exists=$(test "$pr_count" -ne 0 && echo "true" || echo "false")" >> $GITHUB_OUTPUT
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: 📝 Create Pull Request
+        if: steps.pr-check.outputs.pr_exists == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.CI_TOKEN }}
+        run: |
+          base_branch="develop"
+          
+          pr_title="Pre RC ${{github.ref_name}}"
+          
+          pr_body="
+          Automated Pre RC PR from ${{ github.ref_name }}
+          source: ${{ github.ref_name }}
+          target: develop"
+
+          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body" -l "pre-release-candidate"
