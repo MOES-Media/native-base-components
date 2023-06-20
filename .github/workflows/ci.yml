@@ -6,9 +6,6 @@ on:
       - "Service/Create Release PR"
     types:
       - completed
-  pull_request:
-    types:
-      - opened
   push:
     branches:
       - release/feat/**
