@@ -43,9 +43,10 @@ jobs:
           pr_count=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
                     "https://api.github.com/repos/${{ github.repository }}/pulls?state=open" | \
                     jq --arg branch "$branch_name" '.[] | select(.base.ref == $branch) | length')
-          echo "prExists=$(test "$pr_count" -ne 0 && echo "true" || echo "false")" >> $GITHUB_OUTPUT
+          echo "pr_exists=$(test "$pr_count" -ne 0 && echo "true" || echo "false")" >> $GITHUB_OUTPUT
+      - run: echo ${{ steps.pr-check.outputs.pr_exists }}
       - name: 📝 Create Pull Request
-        if: steps.pr-check.outputs.prExists == 'false'
+        if: steps.pr-check.outputs.pr_exists == 'false'
         env:
           GH_TOKEN: ${{ secrets.CI_TOKEN }}
         run: |
