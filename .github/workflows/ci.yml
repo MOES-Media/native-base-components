@@ -12,7 +12,9 @@ on:
   push:
     branches:
       - release/feat/**
+      - release/fix/**
       - feat/**
+      - fix/**
 
 jobs:
   CI-Quality-Gate:
