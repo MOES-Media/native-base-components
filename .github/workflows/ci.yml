@@ -34,8 +34,11 @@ jobs:
           GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
       - name: 🚦 Qualtiy Gate
         uses: ./.github/actions/quality
-      - if: ${{ !startsWith(github.ref, 'refs/heads/release')}}
-        run: exit 0
+      - run: echo ${{ !startsWith(github.ref, 'refs/heads/release') }} 
+      - if: ${{ !startsWith(github.ref, 'refs/heads/release/feat') }}
+        run: |
+          echo "The branch does not start with 'release/feat'. Exiting..."
+          exit 0
       - name: Check for existing PR
         id: pr-check
         run: |
