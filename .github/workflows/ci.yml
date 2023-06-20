@@ -38,7 +38,7 @@ jobs:
   
   Merge-To-Develop:
     needs: CI-Quality-Gate
-    if: ${{ !startsWith(github.ref, 'refs/heads/release') }}
+    if: ${{ startsWith(github.ref, 'refs/heads/release') }}
     runs-on: 
       - ubuntu-latest
 
