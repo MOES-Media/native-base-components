@@ -40,4 +40,4 @@ jobs:
       - if: ${{ github.ref == 'refs/heads/develop' }}
         run: yarn changeset pre enter next
       - name: 🚀 Generate Release Versions & Notes
-        run: yarn changeset version && yarn changeset generate-release-notes
+        run: yarn changeset version
