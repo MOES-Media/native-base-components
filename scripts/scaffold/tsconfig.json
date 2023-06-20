@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "sourceMap": true,
+      "experimentalDecorators": true,
+      "lib": ["dom", "es2015"],
+      "allowSyntheticDefaultImports": true,
+      "moduleResolution": "node",
+      "noEmitHelpers": true,
+      "importHelpers": true,
+      "strict": true,
+      "noImplicitReturns": true,
+      "skipLibCheck": true,
+      "declaration": true,
+      "outDir": "dist/cjs",
+      "module": "CommonJS",
+      "target": "ES5"
+    },
+    "include": ["./src"],
+    "exclude": ["node_modules", "../../node_modules", "dist"]
+  }
+  

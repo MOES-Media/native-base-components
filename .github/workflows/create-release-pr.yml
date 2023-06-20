@@ -1,23 +1,45 @@
-name: Create Release PR
+name: Service/Create Release PR
 
 on:
   workflow_dispatch:
 
 jobs:
-  create_pr:
+  CreateReleaseBranch:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout develop
+        uses: actions/checkout@v3
+        with:
+          ref: develop
+      - name: Create branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+        run: | 
+          git branch release/${{ github.ref_name }}
+          git checkout release/${{ github.ref_name }}
+          git push -u origin release/${{ github.ref_name }}
+
+  Create-Release-PR:
+    needs: CreateReleaseBranch
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
       - name: 📝 Create Pull Request
-        uses: peter-evans/create-pull-request@v5
-        with:
-          token: ${{ secrets.CI_TOKEN }}
-          title: Release feat/${{github.event.inputs.feature_branch}}
-          body: |
-            Automated release PR.
-            source: ${{github.ref_name}}
-            target: release/${{github.event.inputs.feature_branch}}
-          labels: release-candidate
-          branch: release/${{github.event.inputs.feature_branch}}
+        env:
+          GH_TOKEN: ${{ secrets.CI_TOKEN }}
+        run: |
+          base_branch="release/${{github.ref_name}}"
+          
+          pr_title="Feature RC ${{github.ref_name}}"
+          
+          pr_body="
+          Automated Feature RC PR from ${{ github.ref_name }}
+          source: ${{ github.ref_name }}
+          target: release/${{github.ref_name}}"
+
+          gh pr create --base "$base_branch" --title "$pr_title" --body "$pr_body" -l "feature-release-candidate"
