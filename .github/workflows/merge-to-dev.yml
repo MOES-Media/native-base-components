@@ -1,11 +1,8 @@
 name: Run After Checks
 
 on:
-  workflow_run:
-    workflows:
-      - "Check PR"
-    types:
-      - completed
+  check_suite:
+    types: [completed]
 
 jobs:
   run-after-checks:
