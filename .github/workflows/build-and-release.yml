@@ -25,6 +25,7 @@ jobs:
       - name: 🚦 Qualtiy Gate
         uses: ./.github/actions/quality
   Release:
+    needs: Quality-Gate
     runs-on:
       - ubuntu-latest
 
