@@ -1,6 +1,6 @@
 {
   "name": "@moes-media/native-base-components-typography",
-  "version": "1.0.0-next.1",
+  "version": "1.0.0-next.2",
   "description": "",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
