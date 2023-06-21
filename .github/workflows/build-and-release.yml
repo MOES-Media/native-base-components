@@ -33,8 +33,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          persist-credentials: false
       - name: 🤖 Yarn install
         uses: ./.github/actions/yarn-install
         with:
