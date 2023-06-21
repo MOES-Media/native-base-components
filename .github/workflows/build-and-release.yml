@@ -42,6 +42,7 @@ jobs:
       - name: 🚀 Generate Release Versions & Notes
         run: yarn changeset version
       - name: 🔍 Look For Changes
+        id: check_changes
         run: |
           changed_files=$(git diff --name-only HEAD^)
           paths_with_changes=()
@@ -53,7 +54,7 @@ jobs:
           echo "changed_paths=$paths_with_changes" >> $GITHUB_OUTPUT
       - name: Print Paths with Changes
         run: |
-          paths="${{ steps.check_changes.outputs.paths_with_changes }}"
+          paths="${{ steps.check_changes.outputs.changed_paths }}"
           IFS=' ' read -ra paths_array <<< "$paths"
           
           for path in "${paths_array[@]}"; do
