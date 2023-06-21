@@ -24,10 +24,12 @@ jobs:
           GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
       - name: 🚦 Qualtiy Gate
         uses: ./.github/actions/quality
-  Release:
+  Release-And-Publish:
     needs: Quality-Gate
     runs-on:
       - ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - uses: actions/checkout@v3
@@ -41,3 +43,8 @@ jobs:
         run: yarn changeset pre enter next
       - name: 🚀 Generate Release Versions & Notes
         run: yarn changeset version
+      - name: Push Changes
+        run: |
+          git add .
+          git commit -m "chore(native-base-components): [no-ci] updated version numbers"
+          git push
