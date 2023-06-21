@@ -1,6 +1,6 @@
 {
   "name": "@moes-media/native-base-components-workshop",
-  "version": "1.0.1-next.1",
+  "version": "1.0.1-next.2",
   "main": "./index.js",
   "license": "MIT",
   "scripts": {
@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "@expo/webpack-config": "^18.0.1",
-    "@moes-media/native-base-components-image-slider": "1.0.0-next.1",
-    "@moes-media/native-base-components-typography": "1.0.0-next.1",
+    "@moes-media/native-base-components-image-slider": "1.0.0-next.2",
+    "@moes-media/native-base-components-typography": "1.0.0-next.2",
     "@react-native-async-storage/async-storage": "1.17.11",
     "@react-native-community/datetimepicker": "6.7.3",
     "@react-native-community/slider": "4.4.2",

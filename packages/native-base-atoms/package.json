@@ -1,6 +1,6 @@
 {
   "name": "@moes-media/native-base-components-atoms",
-  "version": "1.0.0-next.1",
+  "version": "1.0.0-next.2",
   "description": "",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -12,8 +12,8 @@
     "prettier:format": "prettier --write '**/*.{js,ts,tsx,jsx}'"
   },
   "dependencies": {
-    "@moes-media/native-base-components-typography": "1.0.0-next.1",
-    "@moes-media/native-base-components-utils": "1.0.0-next.1"
+    "@moes-media/native-base-components-typography": "1.0.0-next.2",
+    "@moes-media/native-base-components-utils": "1.0.0-next.2"
   },
   "devDependencies": {
     "@moes-media/native-base-components-eslint": "*",
