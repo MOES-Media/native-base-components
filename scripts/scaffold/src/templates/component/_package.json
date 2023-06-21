@@ -4,6 +4,7 @@
     "description": "[DESCRIPTION]",
     "main": "dist/index.js",
     "types": "types/index.d.ts",
+    "files": ["dist"],
     "scripts": {
       "build": "tsc",
       "dev": "tsc --watch",
