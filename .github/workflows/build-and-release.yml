@@ -48,7 +48,9 @@ jobs:
           paths_with_changes=()
 
           while IFS= read -r line; do
-            paths_with_changes+=("$line")
+            if [[ "$line" == packages/* ]]; then
+              paths_with_changes+=("$line")
+            fi
           done <<< "$changed_files"
 
           echo "changed_paths=$paths_with_changes" >> $GITHUB_OUTPUT
