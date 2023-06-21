@@ -41,6 +41,24 @@ jobs:
         run: yarn changeset pre enter next
       - name: 🚀 Generate Release Versions & Notes
         run: yarn changeset version
+      - name: 🔍 Look For Changes
+        run: |
+          changed_files=$(git diff --name-only HEAD^)
+          paths_with_changes=()
+
+          while IFS= read -r line; do
+            paths_with_changes+=("$line")
+          done <<< "$changed_files"
+
+          echo "changed_paths=$paths_with_changes" >> $GITHUB_OUTPUT
+      - name: Print Paths with Changes
+        run: |
+          paths="${{ steps.check_changes.outputs.paths_with_changes }}"
+          IFS=' ' read -ra paths_array <<< "$paths"
+          
+          for path in "${paths_array[@]}"; do
+            echo "Path with changes: $path"
+          done
       - name: 🔄 Update package.lock File
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
