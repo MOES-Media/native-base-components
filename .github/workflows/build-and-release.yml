@@ -44,9 +44,9 @@ jobs:
       - name: 🚀 Generate Release Versions & Notes
         run: yarn changeset version
       - name: Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
         run: |
-          git config --global user.email "no-reply@moes-media.be"
-          git config --global user.name "CI/CD[Bot]"
           git add .
           git commit -m "chore(native-base-components): [no-ci] updated version numbers"
           git push
