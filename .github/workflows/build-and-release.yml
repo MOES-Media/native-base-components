@@ -45,6 +45,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
         run: |
+          git config --global user.name "CI/CD[Bot]"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           git add .
           git commit -m "chore(native-base-components): [no-ci] updated version numbers"
           git push
