@@ -48,20 +48,14 @@ jobs:
           paths_with_changes=$(dirname $paths_with_changes)
           paths_with_changes=$(echo "$paths_with_changes" | sort -u | tr '\n' ' ')
           echo "changed_paths=$paths_with_changes" >> $GITHUB_OUTPUT
-      - name: Print Paths with Changes
-        run: |
-          paths="${{ steps.check_changes.outputs.changed_paths }}"
-          IFS=' ' read -ra paths_array <<< "$paths"
-          
-          for path in "${paths_array[@]}"; do
-            echo "Path with changes: $path"
-          done
       - name: 🔄 Update package.lock File
         env:
           YARN_ENABLE_IMMUTABLE_INSTALLS: false
           HUSKY: "0"
         run: yarn install
-      - name: Push Changes
+      - name: 🔨 Build Artifacts
+        run: yarn build
+      - name: ⬆️ Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
         run: |
@@ -70,3 +64,28 @@ jobs:
           git add .
           git commit -m "chore(native-base-components): [no-ci] updated version numbers"
           git push
+      - name: Generate Tag
+        id: generate_tag
+        run: |
+          echo "tag=$(date +'%Y.%m-%d.%H%M')" >> $GITHUB_OUTPUT
+      - name: Create Release Tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+        run: |
+          git tag ${{ steps.generate_tag.outputs.tag }}
+          git push --tags
+      - name: Create Github Releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+        run: |
+          paths="${{ steps.check_changes.outputs.changed_paths }}"
+          IFS=' ' read -ra paths_array <<< "$paths"
+
+          ROOT_DIR=$(pwd)
+          for path in "${paths_array[@]}"; do
+            cd $ROOT_DIR
+            TITLE=$(jq -r '.name' path/package.json)-$(jq -r '.version' $path/package.json)
+            gh release create ${{ steps.generate_tag.outputs.tag }} -t $TITLE -F $path/CHANGELOG.md $path/dist
+            cd $path
+            npm publish
+          done
