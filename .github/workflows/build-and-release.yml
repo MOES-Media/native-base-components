@@ -45,6 +45,8 @@ jobs:
         run: yarn changeset version
       - name: Push Changes
         run: |
+          git config --global user.email "no-reply@moes-media.be"
+          git config --global user.name "CI/CD[Bot]"
           git add .
           git commit -m "chore(native-base-components): [no-ci] updated version numbers"
           git push
