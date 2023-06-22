@@ -8,6 +8,10 @@
     "config/**/*",
     "scripts/**/*"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MOES-Media/native-base-components.git"
+  },
   "scripts": {
     "postinstall": "husky install",
     "prepack": "pinst --disable",

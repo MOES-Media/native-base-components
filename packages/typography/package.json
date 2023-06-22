@@ -11,6 +11,10 @@
     "lint": "eslint .",
     "prettier:format": "prettier --write '**/*.{js,ts,tsx,jsx}'"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MOES-Media/native-base-components.git"
+  },
   "devDependencies": {
     "@moes-media/native-base-components-eslint": "*",
     "@moes-media/native-base-components-prettier": "*",
