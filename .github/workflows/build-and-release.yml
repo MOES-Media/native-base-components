@@ -85,7 +85,7 @@ jobs:
           for path in "${paths_array[@]}"; do
             cd $path
             yarn pack
-            TITLE=$(jq -r '.name' path/package.json)-$(jq -r '.version' $path/package.json)
+            TITLE=$(jq -r '.name' package.json)-$(jq -r '.version' package.json)
             gh release create ${{ steps.generate_tag.outputs.tag }} -t $TITLE -F CHANGELOG.md package.tgz
             npm publish
           done
