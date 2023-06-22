@@ -73,15 +73,12 @@ jobs:
 
           ROOT_DIR=$(pwd)
           for path in "${paths_array[@]}"; do
-            echo releasing... $path
             cd $ROOT_DIR
             cd $path
             yarn pack
             NAME=$(jq -r '.name' package.json)
             TITLE=${NAME#*@moes-media/}/$(jq -r '.version' package.json)
             TAG=${NAME#*@moes-media/}-$(jq -r '.version' package.json)
-            echo tagname= $TITLE
-            git tag $TITLE
             gh release create $TAG -t $TITLE -F CHANGELOG.md package.tgz
             npm publish
           done

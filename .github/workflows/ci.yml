@@ -12,6 +12,12 @@ on:
       - release/fix/**
       - feat/**
       - fix/**
+  pull_request:
+    types:
+      - opened
+    branches:
+      - develop
+      - main
 
 jobs:
   CI-Quality-Gate:
