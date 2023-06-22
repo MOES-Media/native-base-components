@@ -64,16 +64,6 @@ jobs:
           git add .
           git commit -m "chore(native-base-components): [no-ci] updated version numbers"
           git push
-      - name: Generate Tag
-        id: generate_tag
-        run: |
-          echo "tag=$(date +'%Y.%m-%d.%H%M')" >> $GITHUB_OUTPUT
-      - name: Create Release Tag
-        env:
-          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
-        run: |
-          git tag ${{ steps.generate_tag.outputs.tag }}
-          git push --tags
       - name: Create Github Releases
         env:
           GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
@@ -86,7 +76,9 @@ jobs:
             cd $ROOT_DIR
             cd $path
             yarn pack
-            TITLE=$(jq -r '.name' package.json)-$(jq -r '.version' package.json)
+            TITLE=$(jq -r '.name' package.json)/$(jq -r '.version' package.json)
+            git tag $TITLE
+            git push --tags
             gh release create ${{ steps.generate_tag.outputs.tag }} -t $TITLE -F CHANGELOG.md package.tgz
             npm publish
           done
