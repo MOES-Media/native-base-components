@@ -79,6 +79,7 @@ jobs:
             yarn pack
             NAME=$(jq -r '.name' package.json)
             TITLE=${NAME#*@moes-media/}/$(jq -r '.version' package.json)
+            echo tagname= $TITLE
             git tag $TITLE
             gh release create ${{ steps.generate_tag.outputs.tag }} -t $TITLE -F CHANGELOG.md package.tgz
             npm publish
