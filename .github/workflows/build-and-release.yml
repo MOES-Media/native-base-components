@@ -73,6 +73,7 @@ jobs:
 
           ROOT_DIR=$(pwd)
           for path in "${paths_array[@]}"; do
+            echo releasing... $path
             cd $ROOT_DIR
             cd $path
             yarn pack
