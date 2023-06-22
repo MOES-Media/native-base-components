@@ -1,6 +1,6 @@
 {
   "name": "@moes-media/native-base-components-utils",
-  "version": "1.0.0-next.8",
+  "version": "1.0.0-next.9",
   "description": "",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
