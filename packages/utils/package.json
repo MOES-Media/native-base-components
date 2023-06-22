@@ -1,6 +1,6 @@
 {
   "name": "@moes-media/native-base-components-utils",
-  "version": "1.0.0-next.12",
+  "version": "1.0.0-next.13",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
