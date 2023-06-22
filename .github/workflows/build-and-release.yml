@@ -1,0 +1,85 @@
+name: CD/Build & Release Packages
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+
+jobs:
+  Quality-Gate:
+    runs-on:
+      - ubuntu-latest
+
+    permissions:
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+      - name: 🤖 Yarn install
+        uses: ./.github/actions/yarn-install
+        with:
+          GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
+      - name: 🚦 Qualtiy Gate
+        uses: ./.github/actions/quality
+  Release-And-Publish:
+    needs: Quality-Gate
+    runs-on:
+      - ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: 🤖 Yarn install
+        uses: ./.github/actions/yarn-install
+        with:
+          GITHUB_TOKEN: ${{secrets.CI_TOKEN}}
+      - if: ${{ github.ref == 'refs/heads/develop' }}
+        run: yarn changeset pre enter next
+      - name: 🚀 Generate Release Versions & Notes
+        run: yarn changeset version
+      - name: 🔍 Look For Changes
+        id: check_changes
+        run: |
+          paths_with_changes=$(git diff --name-only HEAD^ | grep -E "^packages/[^/]+/?")
+          paths_with_changes=$(dirname $paths_with_changes)
+          paths_with_changes=$(echo "$paths_with_changes" | sort -u | tr '\n' ' ')
+          echo "changed_paths=$paths_with_changes" >> $GITHUB_OUTPUT
+      - name: 🔄 Update package.lock File
+        env:
+          YARN_ENABLE_IMMUTABLE_INSTALLS: false
+          HUSKY: "0"
+        run: yarn install
+      - name: 🔨 Build Artifacts
+        run: yarn build
+      - name: ⬆️ Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+        run: |
+          git config --global user.name "CI/CD[Bot]"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
+          git add .
+          git commit -m "chore(native-base-components): [no-ci] updated version numbers"
+          git push
+      - name: Create Github Releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_TOKEN }}
+        run: |
+          paths="${{ steps.check_changes.outputs.changed_paths }}"
+          IFS=' ' read -ra paths_array <<< "$paths"
+
+          ROOT_DIR=$(pwd)
+          for path in "${paths_array[@]}"; do
+            cd $ROOT_DIR
+            cd $path
+            yarn pack
+            NAME=$(jq -r '.name' package.json)
+            TITLE=${NAME#*@moes-media/}/$(jq -r '.version' package.json)
+            TAG=${NAME#*@moes-media/}-$(jq -r '.version' package.json)
+            gh release create $TAG -t $TITLE -F CHANGELOG.md package.tgz
+            npm publish
+          done
+          cd $ROOT_DIR
