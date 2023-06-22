@@ -83,6 +83,7 @@ jobs:
 
           ROOT_DIR=$(pwd)
           for path in "${paths_array[@]}"; do
+            cd $ROOT_DIR
             cd $path
             yarn pack
             TITLE=$(jq -r '.name' package.json)-$(jq -r '.version' package.json)
