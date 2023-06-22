@@ -4413,15 +4413,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@moes-media/native-base-components-atoms@1.0.0-next.11, @moes-media/native-base-components-atoms@workspace:packages/native-base-atoms":
+"@moes-media/native-base-components-atoms@1.0.0-next.12, @moes-media/native-base-components-atoms@workspace:packages/native-base-atoms":
   version: 0.0.0-use.local
   resolution: "@moes-media/native-base-components-atoms@workspace:packages/native-base-atoms"
   dependencies:
     "@moes-media/native-base-components-eslint": "*"
     "@moes-media/native-base-components-prettier": "*"
     "@moes-media/native-base-components-ts-config": "*"
-    "@moes-media/native-base-components-typography": 1.0.0-next.11
-    "@moes-media/native-base-components-utils": 1.0.0-next.11
+    "@moes-media/native-base-components-typography": 1.0.0-next.12
+    "@moes-media/native-base-components-utils": 1.0.0-next.12
     eslint: ^8.41.0
     native-base: ^3.4.28
     prettier: ^2.8.8
@@ -4474,7 +4474,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@moes-media/native-base-components-image-slider@1.0.0-next.11, @moes-media/native-base-components-image-slider@workspace:packages/native-base-image-slider":
+"@moes-media/native-base-components-image-slider@1.0.0-next.12, @moes-media/native-base-components-image-slider@workspace:packages/native-base-image-slider":
   version: 0.0.0-use.local
   resolution: "@moes-media/native-base-components-image-slider@workspace:packages/native-base-image-slider"
   dependencies:
@@ -4482,13 +4482,13 @@ __metadata:
     "@babel/plugin-transform-private-methods": ^7.22.3
     "@babel/plugin-transform-react-jsx": ^7.22.3
     "@babel/preset-react": ^7.22.3
-    "@moes-media/native-base-components-atoms": 1.0.0-next.11
+    "@moes-media/native-base-components-atoms": 1.0.0-next.12
     "@moes-media/native-base-components-eslint": "*"
     "@moes-media/native-base-components-jest": "*"
     "@moes-media/native-base-components-prettier": "*"
     "@moes-media/native-base-components-ts-config": "*"
-    "@moes-media/native-base-components-typography": 1.0.0-next.11
-    "@moes-media/native-base-components-utils": 1.0.0-next.11
+    "@moes-media/native-base-components-typography": 1.0.0-next.12
+    "@moes-media/native-base-components-utils": 1.0.0-next.12
     "@swc/core": ^1.3.62
     "@swc/jest": ^0.2.26
     "@testing-library/jest-dom": ^5.16.5
@@ -4579,7 +4579,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@moes-media/native-base-components-typography@1.0.0-next.11, @moes-media/native-base-components-typography@workspace:packages/typography":
+"@moes-media/native-base-components-typography@1.0.0-next.12, @moes-media/native-base-components-typography@workspace:packages/typography":
   version: 0.0.0-use.local
   resolution: "@moes-media/native-base-components-typography@workspace:packages/typography"
   dependencies:
@@ -4600,7 +4600,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@moes-media/native-base-components-utils@1.0.0-next.11, @moes-media/native-base-components-utils@workspace:packages/utils":
+"@moes-media/native-base-components-utils@1.0.0-next.12, @moes-media/native-base-components-utils@workspace:packages/utils":
   version: 0.0.0-use.local
   resolution: "@moes-media/native-base-components-utils@workspace:packages/utils"
   dependencies:
@@ -4628,9 +4628,9 @@ __metadata:
     "@babel/core": ^7.20.0
     "@expo/webpack-config": ^18.0.1
     "@moes-media/native-base-components-eslint": "*"
-    "@moes-media/native-base-components-image-slider": 1.0.0-next.11
+    "@moes-media/native-base-components-image-slider": 1.0.0-next.12
     "@moes-media/native-base-components-prettier": "*"
-    "@moes-media/native-base-components-typography": 1.0.0-next.11
+    "@moes-media/native-base-components-typography": 1.0.0-next.12
     "@react-native-async-storage/async-storage": 1.17.11
     "@react-native-community/datetimepicker": 6.7.3
     "@react-native-community/slider": 4.4.2
